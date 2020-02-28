@@ -4,6 +4,9 @@ You can use the [editor on GitHub](https://github.com/flash-jaehyun/flash-jaehyu
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
+### Tabs
+[Machine Learning](https://flash-jaehyun.github.io/machine-learning/)
+
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
@@ -25,6 +28,7 @@ Syntax highlighted code block
 
 [Link](url) and ![Image](src)
 ```
+[Machine Learning](https://flash-jaehyun.github.io/machine-learning/)
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
