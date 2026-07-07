@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <title>News — Jaehyun Kim</title>
+  <meta name="description" content="News and updates from Jaehyun Kim — papers, talks, and awards in electrocatalysis and computational materials design." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script>
+    (function () {
+      var s = localStorage.getItem("theme");
+      var d = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.dataset.theme = s || (d ? "dark" : "light");
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" data-profile="shortName">Jaehyun</a>
+      <nav class="main-nav">
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="news.html">News</a>
+        <a href="cv.html">CV</a>
+        <button id="theme-toggle" title="Toggle dark mode">☾</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="main">
+    <div class="page-head">
+      <div class="sec-label">News</div>
+      <h1>News</h1>
+      <p>Research updates, papers, and talks.</p>
+    </div>
+
+    <section class="block">
+      <ul class="news-list" id="news-all"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      © <span id="footer-year"></span> <span data-profile="shortName">Jaehyun</span> · built with plain HTML/CSS/JS
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => renderNews("news-all"));
+  </script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Jaehyun Kim — Electrochemical Interfaces, Computation + Experiment</title>
+  <meta name="description" content="Jaehyun Kim, Ph.D. — computational + experimental electrochemist (Seoul National University). ML-guided catalyst design, synthesis, operando analysis, and MEA device testing in one closed loop." />
+  <!-- TODO after deploy: set absolute URLs (canonical, og:url, og:image). -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jaehyun Kim — Electrochemical Interfaces, Computation + Experiment" />
+  <meta property="og:description" content="Computational + experimental electrochemist. First-author Nature Communications 2026: ML-designed W₁-NiFeOOH for noble-metal-free AEM water electrolysis. 1,574 citations, h-index 23." />
+  <meta property="og:image" content="assets/pubs/natcomm2026_fig1.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script>
+    (function () {
+      var s = localStorage.getItem("theme");
+      var d = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.dataset.theme = s || (d ? "dark" : "light");
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jaehyun Kim",
+    "honorificSuffix": "Ph.D.",
+    "jobTitle": "Postdoctoral Researcher",
+    "affiliation": { "@type": "Organization", "name": "Seoul National University" },
+    "alumniOf": [
+      { "@type": "Organization", "name": "Seoul National University" },
+      { "@type": "Organization", "name": "Pohang University of Science and Technology (POSTECH)" }
+    ],
+    "email": "mailto:jaehyunkim@snu.ac.kr",
+    "sameAs": ["https://scholar.google.com/citations?user=1VA58skAAAAJ"],
+    "knowsAbout": ["Electrocatalysis", "Machine-learning interatomic potentials", "Water electrolysis", "CO2 reduction", "Operando spectroscopy", "Membrane-electrode assemblies"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" data-profile="shortName">Jaehyun Kim</a>
+      <nav class="main-nav">
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="news.html">News</a>
+        <a href="cv.html">CV</a>
+        <button id="theme-toggle" title="Toggle dark mode">☾</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="main">
+    <noscript>
+      <section class="block" style="opacity:1;transform:none;">
+        <h1>Jaehyun Kim, Ph.D.</h1>
+        <p>Postdoctoral Researcher, Seoul National University — computational + experimental
+        electrochemist. ML-guided catalyst design, synthesis, operando analysis, and MEA device
+        testing. First-author <em>Nature Communications</em> (2026): ML-designed W₁-NiFeOOH for
+        noble-metal-free AEM water electrolysis. 39 SCI(E) papers, 12 first/co-first, 1,574 citations.</p>
+        <p>Contact: <a href="mailto:jaehyunkim@snu.ac.kr">jaehyunkim@snu.ac.kr</a> ·
+        <a href="publications.html">Publications</a> · <a href="cv.html">CV</a>.
+        This site is interactive; please enable JavaScript for the full experience.</p>
+      </section>
+    </noscript>
+
+    <!-- Hero -->
+    <section class="hero">
+      <!-- Drop your photo at assets/portrait.jpg — it swaps in automatically. -->
+      <img class="portrait" src="assets/portrait.jpg" alt="Portrait of Jaehyun Kim" width="150" height="150" style="display:none"
+           onload="this.style.display='block';var f=document.getElementById('portrait-fallback');if(f)f.style.display='none';" />
+      <div class="portrait-fallback" id="portrait-fallback" data-profile="initial">JK</div>
+      <div>
+        <div class="hero-role" id="hero-eyebrow"></div>
+        <h1 data-profile="headline">I compute the catalyst, then build the device that proves it.</h1>
+        <div class="hero-affil" id="hero-affil"></div>
+        <p class="tagline" data-profile="subhead"></p>
+        <p class="hero-flagship" id="hero-flagship"></p>
+        <div class="links">
+          <a data-profile-href="email" href="#">Email</a>
+          <a data-profile-href="scholar" href="#" target="_blank" rel="noopener">Google Scholar</a>
+          <a data-profile-href="github" href="#" target="_blank" rel="noopener">GitHub</a>
+          <a data-profile-href="orcid" href="#" target="_blank" rel="noopener">ORCID</a>
+          <a href="cv.html">CV</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metrics -->
+    <section class="block">
+      <div class="metrics-strip" id="metrics"></div>
+      <div id="affiliations-strip"></div>
+    </section>
+
+    <!-- About -->
+    <section class="block">
+      <div class="sec-label">About</div>
+      <div class="prose"><p id="about-text"></p></div>
+    </section>
+
+    <!-- How I work: closed loop -->
+    <section class="block">
+      <div class="sec-label">01 — How I work</div>
+      <h2 class="section-title">One closed loop, end to end</h2>
+      <div id="loop-graphic"></div>
+      <div class="loop-note" id="loop-note"></div>
+    </section>
+
+    <!-- Research directions -->
+    <section class="block">
+      <div class="section-title-row">
+        <div class="sec-label" style="margin-bottom:0;">02 — Research directions</div>
+        <a class="more" href="research.html">more →</a>
+      </div>
+      <div id="directions" style="margin-top:1.2rem;"></div>
+    </section>
+
+    <!-- Selected publications -->
+    <section class="block">
+      <div class="section-title-row">
+        <div>
+          <div class="sec-label">03 — Selected work</div>
+          <h2 class="section-title">Representative publications</h2>
+        </div>
+        <a class="more" href="publications.html">full list →</a>
+      </div>
+      <div id="pubs-selected"></div>
+    </section>
+
+    <!-- News -->
+    <section class="block">
+      <div class="section-title-row">
+        <div class="sec-label" style="margin-bottom:0;">04 — News</div>
+        <a class="more" href="news.html">all updates →</a>
+      </div>
+      <ul class="news-list" id="news-preview" style="margin-top:1rem;"></ul>
+    </section>
+
+    <!-- Work with me (closing invitation) -->
+    <section class="block">
+      <div class="sec-label">05 — Work with me</div>
+      <h2 class="section-title" data-wwm="headline">One researcher, the whole catalysis loop</h2>
+      <div id="work-with-me"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      © <span id="footer-year"></span> <span data-profile="shortName">Jaehyun Kim</span> · built with plain HTML/CSS/JS
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      renderMetrics("metrics");
+      renderLoopGraphic("loop-graphic", "loop-note");
+      renderDirections("directions");
+      renderPublications("pubs-selected", "selected");
+      renderNews("news-preview", 3);
+      renderWorkWithMe("work-with-me");
+      const h = document.querySelector('[data-wwm="headline"]');
+      if (h && typeof WORKWITHME !== "undefined") h.textContent = WORKWITHME.headline;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Research — Jaehyun Kim</title>
+  <meta name="description" content="Research of Jaehyun Kim — high-flux electrochemical interfaces: ML-guided catalyst design, operando mechanism, and multiscale modeling from prediction to device." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script>
+    (function () {
+      var s = localStorage.getItem("theme");
+      var d = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.dataset.theme = s || (d ? "dark" : "light");
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" data-profile="shortName">Jaehyun Kim</a>
+      <nav class="main-nav">
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="news.html">News</a>
+        <a href="cv.html">CV</a>
+        <button id="theme-toggle" title="Toggle dark mode">☾</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="main">
+    <div class="page-head">
+      <div class="sec-label">Research</div>
+      <h1>What I work on</h1>
+      <p>High-flux electrochemical interfaces — from atomistic prediction to device operation.</p>
+    </div>
+
+    <!-- Closed loop -->
+    <section class="block">
+      <div class="sec-label">The closed loop</div>
+      <div id="loop-graphic"></div>
+      <div class="loop-note" id="loop-note"></div>
+    </section>
+
+    <!-- Directions -->
+    <section class="block">
+      <div class="sec-label">Directions</div>
+      <div id="directions" style="margin-top:1rem;"></div>
+    </section>
+
+    <!-- Detail -->
+    <section class="block">
+      <div class="sec-label">Flagship study</div>
+      <h3 style="font-size:1.35rem;margin:0.5rem 0 0.5rem;">ML-guided tungsten single atoms for noble-metal-free water electrolysis</h3>
+      <div class="prose">
+        <p>
+          My first-author <em>Nature Communications</em> (2026) study is the clearest example of
+          how I work. I fine-tuned <strong>EquiformerV2</strong> on custom DFT datasets to screen
+          <strong>3,976 single-atom oxyhydroxide configurations</strong>, identified
+          <strong>W₁-NiFeOOH</strong> as a promising catalyst, and synthesized it through scalable
+          cyclic electrodeposition. I then resolved its mechanism with operando Raman and synchrotron
+          XAS, and translated the catalyst into an anion-exchange-membrane electrolyzer that reached
+          <strong>13.1 A cm⁻² at 2.0 V</strong> under practical conditions — atomistic prediction,
+          interfacial mechanism, and device-relevant operation connected in a single closed loop.
+        </p>
+      </div>
+      <figure class="pub-figure" style="margin-top:1.2rem;">
+        <img src="assets/pubs/natcomm2026_fig1.jpg" alt="Machine learning-guided catalyst screening (Nature Communications 2026, Fig. 1)" loading="lazy" />
+        <figcaption>Fig. 1 — ML-guided catalyst screening: EquiformerV2 + DFT, OER activity volcano, and raw-material cost analysis. <em>Nature Communications</em> 17, 2344 (2026).</figcaption>
+      </figure>
+
+      <div class="sec-label" style="margin-top:1.8rem;">Beyond water splitting</div>
+      <div class="prose">
+        <p>
+          The same theory-to-device approach carries across CO₂ electroreduction, glycerol and
+          oxygenated-feed upgrading, acidic enol electrooxidation, and electrocatalytic ammonia
+          oxidation. In my current postdoctoral work I am developing a multiscale computational
+          framework — coupling DFT, machine-learned interatomic potentials, and molecular dynamics
+          with explicit solvent — to model ion transport within anion-exchange membranes and ionomer
+          layers, validated through MEA fabrication and testing. I am also setting up and evaluating
+          direct CO₂ capture systems, toward integrating capture and electrochemical conversion
+          rather than treating them as separate processes.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      © <span id="footer-year"></span> <span data-profile="shortName">Jaehyun Kim</span> · built with plain HTML/CSS/JS
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      renderLoopGraphic("loop-graphic", "loop-note");
+      renderDirections("directions");
+    });
+  </script>
+</body>
+</html>

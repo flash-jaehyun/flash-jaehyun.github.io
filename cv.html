@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <title>CV — Jaehyun Kim</title>
+  <meta name="description" content="Curriculum vitae of Jaehyun Kim, Ph.D. — education, research, publications, talks, awards, and patents." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script>
+    (function () {
+      var s = localStorage.getItem("theme");
+      var d = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.dataset.theme = s || (d ? "dark" : "light");
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" data-profile="shortName">Jaehyun</a>
+      <nav class="main-nav">
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="news.html">News</a>
+        <a href="cv.html">CV</a>
+        <button id="theme-toggle" title="Toggle dark mode">☾</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="main">
+    <div class="page-head">
+      <div class="sec-label">Curriculum Vitae</div>
+      <h1>Curriculum Vitae</h1>
+      <p style="margin-top:0.8rem;">
+        <!-- Drop a PDF at assets/cv.pdf and this button works: -->
+        <a class="btn" href="assets/cv.pdf" target="_blank" rel="noopener">Download PDF →</a>
+      </p>
+    </div>
+
+    <section class="block">
+      <div class="sec-label">Education</div>
+      <div id="cv-education"></div>
+    </section>
+
+    <section class="block">
+      <div class="sec-label">Selected Projects</div>
+      <div id="cv-experience"></div>
+    </section>
+
+    <section class="block">
+      <div class="sec-label">Core Expertise</div>
+      <div id="cv-skills"></div>
+    </section>
+
+    <section class="block" id="talks-block" style="display:none;">
+      <div class="sec-label">Selected Presentations</div>
+      <div id="cv-talks"></div>
+    </section>
+
+    <section class="block" id="honors-block" style="display:none;">
+      <div class="sec-label">Honors &amp; Awards</div>
+      <div id="cv-honors"></div>
+    </section>
+
+    <section class="block" id="patents-block" style="display:none;">
+      <div class="sec-label">Patents</div>
+      <div id="cv-patents"></div>
+    </section>
+
+    <section class="block">
+      <div class="sec-label">Publications</div>
+      <p class="prose">39 published SCI(E) papers · 12 first / co-first author · 5 under review. See the <a href="publications.html">publications page</a> for the full list.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      © <span id="footer-year"></span> <span data-profile="shortName">Jaehyun</span> · built with plain HTML/CSS/JS
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      renderCVList("cv-education", CV.education);
+      renderCVList("cv-experience", CV.experience);
+      renderSkills("cv-skills");
+      if (CV.talks && CV.talks.length) {
+        document.getElementById("talks-block").style.display = "";
+        renderCVList("cv-talks", CV.talks);
+      }
+      if (CV.honors && CV.honors.length) {
+        document.getElementById("honors-block").style.display = "";
+        renderCVList("cv-honors", CV.honors);
+      }
+      if (CV.patents && CV.patents.length) {
+        document.getElementById("patents-block").style.display = "";
+        renderCVList("cv-patents", CV.patents);
+      }
+    });
+  </script>
+</body>
+</html>

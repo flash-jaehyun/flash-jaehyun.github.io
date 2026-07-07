@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: after deploying, set your real domain here:
+# Sitemap: https://<username>.github.io/sitemap.xml

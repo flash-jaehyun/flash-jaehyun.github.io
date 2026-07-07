@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Publications — Jaehyun Kim</title>
+  <meta name="description" content="Publications of Jaehyun Kim — 39 SCI(E) papers, 12 first or co-first author, including a first-author Nature Communications (2026)." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script>
+    (function () {
+      var s = localStorage.getItem("theme");
+      var d = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.dataset.theme = s || (d ? "dark" : "light");
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" data-profile="shortName">Jaehyun</a>
+      <nav class="main-nav">
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="news.html">News</a>
+        <a href="cv.html">CV</a>
+        <button id="theme-toggle" title="Toggle dark mode">☾</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="main">
+    <div class="page-head">
+      <div class="sec-label">Publications</div>
+      <h1>Publications</h1>
+      <p>39 published SCI(E) papers · 5 under review. Full record also on
+        <a data-profile-href="scholar" href="#" target="_blank" rel="noopener">Google Scholar</a>.
+        <span style="white-space:nowrap;"><span class="pub-first" style="margin-left:0;">1st / co-1st</span> = first or co-first author.</span></p>
+    </div>
+
+    <section class="block">
+      <div id="pub-timeline"></div>
+      <div class="pub-filter" id="pub-filter"></div>
+      <div id="pubs-all"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      © <span id="footer-year"></span> <span data-profile="shortName">Jaehyun</span> · built with plain HTML/CSS/JS
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      renderPublications("pubs-all", "all");
+      setupPubFilter("pub-filter", "pubs-all");
+      renderPubTimeline("pub-timeline", "pubs-all", "pub-filter");
+    });
+  </script>
+</body>
+</html>
