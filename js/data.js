@@ -13,13 +13,12 @@ const PROFILE = {
   institution: "Seoul National University",
   department: "School of Chemical & Biological Engineering",
   role: "Electrochemical Interfaces · Computation + Experiment",
-  // Big first-screen statement (the H1).
-  headline: "I compute the catalyst, then build the device that proves it.",
-  // Positioning under the headline — kept to ~2 lines.
+  // Short intro paragraph shown under the name (plain, factual).
   subhead:
-    "Machine-learning screening, DFT/MLIP simulation, hands-on synthesis, operando " +
-    "synchrotron and Raman, and zero-gap MEA device testing — the full electrochemical " +
-    "stack, from first-principles prediction to a working device, run end to end.",
+    "My research combines computational catalyst screening (machine-learned interatomic " +
+    "potentials and DFT) with synthesis, operando spectroscopy, and membrane-electrode-assembly " +
+    "testing. I work on catalysts and interfaces for water electrolysis, CO₂ reduction, and " +
+    "ammonia oxidation.",
   // One credential line shown under the tagline (linked).
   flagship: {
     text: "First-author Nature Communications (2026): ML-designed W₁-NiFeOOH for noble-metal-free anion-exchange-membrane water electrolysis",
@@ -40,22 +39,22 @@ const PROFILE = {
 // value + short label + optional mono sub-line.
 // Citation figures are a snapshot — update the date when you refresh them.
 const METRICS = [
-  { value: "1,574", label: "citations", sub: "h-index 23 · Google Scholar, Jul 2026" },
-  { value: "39", label: "peer-reviewed SCI(E) papers", sub: "12 first / co-first author" },
-  { value: "3,976", label: "configurations ML-screened", sub: "→ W₁-NiFeOOH catalyst" },
+  { value: "1,574", label: "citations", sub: "Google Scholar, Jul 2026" },
+  { value: "39", label: "publications", sub: "12 first / co-first author" },
+  { value: "23", label: "h-index", sub: "i10-index 30" },
 ];
 
 // ---- Closed-loop workflow (his signature method) ----------------
 // Each stage has a `detail` shown when you hover / tap it, and a `phase`
 // (comp = computation, exp = experiment) that color-codes the loop graphic.
 const LOOP = [
-  { label: "ML screening", phase: "comp", detail: "Fine-tune EquiformerV2 on custom DFT data to rank thousands of candidate catalysts — about 1,000× faster than DFT alone." },
-  { label: "DFT · MLIP · MD", phase: "comp", detail: "Validate energetics with DFT; model interfaces and ion transport with machine-learned potentials and explicit-solvent MD." },
-  { label: "Synthesis", phase: "exp", detail: "Turn the top candidate into a real electrode via scalable cyclic-electrodeposition — minutes, at room temperature." },
-  { label: "Operando", phase: "exp", detail: "Watch the working interface with operando Raman, synchrotron XAS, and identical-location TEM." },
-  { label: "MEA device", phase: "exp", detail: "Validate in a zero-gap membrane-electrode-assembly electrolyzer at industrial current density." },
+  { label: "ML screening", phase: "comp", detail: "Screen candidate catalysts with an EquiformerV2 potential fine-tuned on DFT data." },
+  { label: "DFT · MLIP · MD", phase: "comp", detail: "Validate energetics with DFT and model interfaces and ion transport with machine-learned potentials and explicit-solvent MD." },
+  { label: "Synthesis", phase: "exp", detail: "Synthesize the selected catalysts by cyclic electrodeposition." },
+  { label: "Operando", phase: "exp", detail: "Characterize the working catalyst with operando Raman, synchrotron XAS, and identical-location TEM." },
+  { label: "MEA device", phase: "exp", detail: "Test the catalysts in zero-gap membrane-electrode-assembly electrolyzers." },
 ];
-const LOOP_NOTE = "Hover or tap each stage — one closed loop, from atomistic prediction to industrial current density.";
+const LOOP_NOTE = "Hover or tap a stage for detail.";
 const LOOP_CENTER = ["Prediction", "to device"]; // center label of the graphic (2 lines)
 
 // ---- About / vision ---------------------------------------------
@@ -70,12 +69,14 @@ const ABOUT =
 // ---- Biography (career narrative, shown on the CV page) ----------
 // First-person narrative arc; may contain simple <strong>/<em>.
 const BIO =
-  "Postdoctoral researcher at Seoul National University (Prof. Jungwon Park), after a Ph.D. " +
-  "at SNU (Prof. Ho Won Jang) on single-atom catalysts and a B.S. (<em>cum laude</em>) at POSTECH. " +
-  "I connect machine-learning and DFT screening to synthesis, operando spectroscopy, and " +
-  "membrane-electrode-assembly devices — one closed loop, which produced the noble-metal-free " +
-  "<strong>W₁-NiFeOOH</strong> catalyst (first-author, <em>Nature Communications</em> 2026). " +
-  "39 papers · 12 first/co-first · 1,574 citations.";
+  "I am a postdoctoral researcher at Seoul National University, working with Prof. Jungwon Park. " +
+  "I completed my Ph.D. at SNU under Prof. Ho Won Jang, on single-atom catalysts for " +
+  "electrochemical energy conversion, and my B.S. (<em>cum laude</em>) at POSTECH. My work " +
+  "combines machine-learning and DFT catalyst screening with synthesis, operando spectroscopy, " +
+  "and membrane-electrode-assembly testing. This work produced the noble-metal-free " +
+  "<strong>W₁-NiFeOOH</strong> catalyst, published as a first-author paper in " +
+  "<em>Nature Communications</em> (2026). I have 39 publications (12 first or co-first author) " +
+  "and 1,574 citations.";
 
 // Short third-person bio (for conference intros) — copyable on the CV page.
 const BIO_SHORT =
@@ -86,22 +87,14 @@ const BIO_SHORT =
   "noble-metal-free W1-NiFeOOH catalyst for anion-exchange-membrane water electrolysis. " +
   "He holds a Ph.D. from Seoul National University.";
 
-// ---- Work with me (collaboration invitation) --------------------
+// ---- Contact --------------------------------------------------
 const WORKWITHME = {
-  headline: "Let's close the loop together",
-  // `pitch` may contain simple <strong> emphasis.
+  headline: "Contact",
   pitch:
-    "I connect computational catalyst design to working devices — screening and simulation " +
-    "through synthesis, operando spectroscopy, and MEA testing. I like collaborations where a " +
-    "prediction meets a real electrode. Whether you bring theory, materials, spectroscopy, or a " +
-    "device problem, let's build on it together.",
-  brings: [
-    "ML / DFT / MLIP screening — predictions worth acting on, with a physical reason they work.",
-    "Synthesis by electrodeposition + operando XAS, Raman, and IL-TEM to watch the interface while it runs.",
-    "Zero-gap MEA fabrication and reactor testing across water electrolysis, CO₂, and ammonia oxidation.",
-    "Reproducible, AI-guided workflows where computation and experiment speak to each other.",
-  ],
-  cta: "Open to research collaborations and new positions — a short email is the fastest way to start.",
+    "I am open to research collaborations and new positions, especially work that connects " +
+    "catalyst design, spectroscopy, and device engineering.",
+  brings: [],
+  cta: "Reach me by email:",
 };
 
 // ---- Research directions (the four pillars) ---------------------
@@ -109,25 +102,25 @@ const PROJECTS = [
   {
     n: "01",
     title: "ML-guided catalyst design",
-    desc: "Fine-tune EquiformerV2 on DFT data to screen thousands of single-atom configurations and pick winners before the bench.",
+    desc: "Fine-tune EquiformerV2 on DFT data to screen single-atom catalyst configurations before synthesis.",
     tags: ["EquiformerV2", "DFT", "single-atom catalysts"],
   },
   {
     n: "02",
-    title: "Synthesis to operando mechanism",
-    desc: "Scalable electrodeposition with operando Raman, synchrotron XAS, and IL-TEM — what the active interface really does, not just what the model predicts.",
+    title: "Synthesis and operando mechanism",
+    desc: "Electrodeposition combined with operando Raman, synchrotron XAS, and identical-location TEM to resolve reaction mechanisms.",
     tags: ["operando Raman", "synchrotron XAS", "IL-TEM"],
   },
   {
     n: "03",
     title: "High-flux electrochemical interfaces",
-    desc: "Noble-metal-free catalyst–ionomer–membrane interfaces that stay selective and durable at practical current density.",
+    desc: "Noble-metal-free catalyst, ionomer, and membrane interfaces that remain selective and durable at practical current density.",
     tags: ["AEM electrolysis", "CO₂ reduction", "zero-gap MEA"],
   },
   {
     n: "04",
     title: "Multiscale interface modeling",
-    desc: "DFT + machine-learned potentials + explicit-solvent MD for ion transport in anion-exchange membranes and ionomers.",
+    desc: "DFT, machine-learned potentials, and explicit-solvent MD for ion transport in anion-exchange membranes and ionomers.",
     tags: ["MLIP", "MD", "ion transport"],
   },
 ];

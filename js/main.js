@@ -325,15 +325,17 @@ function setupPubFilter(chipsId, containerId) {
 function renderWorkWithMe(containerId) {
   const root = document.getElementById(containerId);
   if (!root || typeof WORKWITHME === "undefined") return;
-  root.appendChild(el("p", "wwm-pitch", WORKWITHME.pitch));
-  const ul = el("ul", "wwm-brings");
-  WORKWITHME.brings.forEach((b) => ul.appendChild(el("li", null, b)));
-  root.appendChild(ul);
+  if (WORKWITHME.pitch) root.appendChild(el("p", "wwm-pitch", WORKWITHME.pitch));
+  if (WORKWITHME.brings && WORKWITHME.brings.length) {
+    const ul = el("ul", "wwm-brings");
+    WORKWITHME.brings.forEach((b) => ul.appendChild(el("li", null, b)));
+    root.appendChild(ul);
+  }
   const cta = el("div", "wwm-cta");
-  const btn = el("a", "btn", "Email me →");
+  if (WORKWITHME.cta) cta.appendChild(el("span", "note", WORKWITHME.cta));
+  const btn = el("a", "btn", PROFILE.email);
   btn.href = "mailto:" + PROFILE.email;
   cta.appendChild(btn);
-  cta.appendChild(el("span", "note", WORKWITHME.cta));
   root.appendChild(cta);
 }
 

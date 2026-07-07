@@ -144,8 +144,8 @@ nav.main-nav a:hover, nav.main-nav a.active { color: var(--accent); text-decorat
   color: var(--accent);
   margin-bottom: 0.5rem;
 }
-.hero h1 { font-size: 2.5rem; font-weight: 700; letter-spacing: -0.035em; line-height: 1.08; margin-bottom: 0.8rem; }
-.hero .tagline { color: var(--text-soft); font-size: 1.06rem; max-width: 34rem; margin-bottom: 1.1rem; }
+.hero h1 { font-size: 2.1rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 0.4rem; }
+.hero .tagline { color: var(--text-soft); font-size: 1rem; line-height: 1.6; max-width: 36rem; margin: 0.9rem 0 1.1rem; }
 
 .hero .links { display: flex; flex-wrap: wrap; gap: 1rem; }
 .hero .links a {

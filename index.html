@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light dark" />
   <title>Jaehyun Kim — Electrochemical Interfaces, Computation + Experiment</title>
-  <meta name="description" content="Jaehyun Kim, Ph.D. — computational + experimental electrochemist (Seoul National University). ML-guided catalyst design, synthesis, operando analysis, and MEA device testing in one closed loop." />
+  <meta name="description" content="Jaehyun Kim, Ph.D. — postdoctoral researcher at Seoul National University working on electrochemical catalysts and interfaces, combining machine-learning and DFT screening with synthesis, operando spectroscopy, and device testing." />
   <link rel="canonical" href="https://flash-jaehyun.github.io/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://flash-jaehyun.github.io/" />
   <meta property="og:title" content="Jaehyun Kim — Electrochemical Interfaces, Computation + Experiment" />
-  <meta property="og:description" content="Computational + experimental electrochemist. First-author Nature Communications 2026: ML-designed W₁-NiFeOOH for noble-metal-free AEM water electrolysis. 1,574 citations, h-index 23." />
+  <meta property="og:description" content="Postdoctoral researcher at Seoul National University working on electrochemical catalysts and interfaces. First-author, Nature Communications (2026). 39 publications, 1,574 citations, h-index 23." />
   <meta property="og:image" content="https://flash-jaehyun.github.io/assets/pubs/natcomm2026_fig1.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
@@ -24,7 +24,7 @@
       document.documentElement.dataset.theme = s || (d ? "dark" : "light");
     })();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=10" />
+  <link rel="stylesheet" href="css/style.css?v=11" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -76,13 +76,9 @@
            onload="this.style.display='block';var f=document.getElementById('portrait-fallback');if(f)f.style.display='none';" />
       <div class="portrait-fallback" id="portrait-fallback" data-profile="initial">JK</div>
       <div>
-        <div class="hero-role" id="hero-eyebrow"></div>
-        <h1 data-profile="headline">I compute the catalyst, then build the device that proves it.</h1>
-        <div class="hero-identity">
-          <div class="hi-name" id="hi-name"></div>
-          <div class="hi-role" id="hi-role"></div>
-          <div class="hi-meta" id="hi-meta"></div>
-        </div>
+        <h1 class="hero-name" data-profile="name">Jaehyun Kim, Ph.D.</h1>
+        <div class="hi-role" id="hi-role"></div>
+        <div class="hi-meta" id="hi-meta"></div>
         <p class="tagline" data-profile="subhead"></p>
         <div class="links">
           <a data-profile-href="email" href="#">Email</a>
@@ -113,10 +109,10 @@
       </div>
     </section>
 
-    <!-- How I work: closed loop -->
+    <!-- Workflow -->
     <section class="block">
-      <div class="sec-label">How I work</div>
-      <h2 class="section-title">One closed loop, end to end</h2>
+      <div class="sec-label">Workflow</div>
+      <h2 class="section-title">From computation to device</h2>
       <div id="loop-graphic"></div>
       <div class="loop-note" id="loop-note"></div>
     </section>
@@ -131,10 +127,10 @@
     <section class="block">
       <div class="sec-label">Flagship study · Nature Communications 2026</div>
       <h2 class="section-title">ML-guided tungsten single atoms for noble-metal-free water electrolysis</h2>
-      <p class="lead">The clearest example of how I work: I fine-tuned EquiformerV2 on custom DFT data,
-      screened the configuration space, identified W₁-NiFeOOH, synthesized it by scalable cyclic
-      electrodeposition, resolved its mechanism with operando spectroscopy, and validated it in an AEM
-      electrolyzer — prediction, mechanism, and device connected in one loop.</p>
+      <p class="lead">In this first-author study, I fine-tuned EquiformerV2 on DFT data, screened the
+      configuration space, and identified W₁-NiFeOOH. I synthesized it by cyclic electrodeposition,
+      characterized it with operando Raman and synchrotron XAS, and tested it in an
+      anion-exchange-membrane electrolyzer.</p>
       <figure class="pub-figure" style="margin-top:1.1rem;">
         <img src="assets/pubs/natcomm2026_fig1.jpg" alt="Machine learning-guided catalyst screening (Nature Communications 2026, Fig. 1)" loading="lazy" />
         <figcaption>Fig. 1 — ML-guided catalyst screening: EquiformerV2 + DFT, OER activity volcano, and raw-material cost analysis. <em>Nature Communications</em> 17, 2344 (2026).</figcaption>
@@ -157,10 +153,7 @@
 
     <!-- ================= News ================= -->
     <section class="block" id="news">
-      <div class="section-head">
-        <div class="sec-label">News</div>
-        <h2>Recent updates</h2>
-      </div>
+      <div class="sec-label">News</div>
       <ul class="news-list" id="news-all" style="margin-top:1rem;"></ul>
     </section>
 
@@ -196,10 +189,7 @@
 
     <!-- ================= Work with me ================= -->
     <section class="block" id="contact">
-      <div class="section-head">
-        <div class="sec-label">Work with me</div>
-        <h2 data-wwm="headline">Let's close the loop together</h2>
-      </div>
+      <div class="sec-label">Contact</div>
       <div id="work-with-me" style="margin-top:1rem;"></div>
     </section>
   </main>
@@ -210,8 +200,8 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=10"></script>
-  <script src="js/main.js?v=10"></script>
+  <script src="js/data.js?v=11"></script>
+  <script src="js/main.js?v=11"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       renderMetrics("metrics");
@@ -234,8 +224,6 @@
       if (CV.honors && CV.honors.length) { document.getElementById("honors-block").style.display = ""; renderCVList("cv-honors", CV.honors); }
       if (CV.patents && CV.patents.length) { document.getElementById("patents-block").style.display = ""; renderCVList("cv-patents", CV.patents); }
       renderWorkWithMe("work-with-me");
-      const h = document.querySelector('[data-wwm="headline"]');
-      if (h && typeof WORKWITHME !== "undefined") h.textContent = WORKWITHME.headline;
     });
   </script>
 </body>
