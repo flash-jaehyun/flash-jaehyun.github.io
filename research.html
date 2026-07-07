@@ -36,17 +36,45 @@
   </header>
 
   <main class="container" id="main">
-    <div class="page-head">
+    <!-- Report header -->
+    <div class="report-head">
       <div class="sec-label">Research</div>
-      <h1>What I work on</h1>
-      <p>High-flux electrochemical interfaces — from atomistic prediction to device operation.</p>
+      <h1>High-flux electrochemical interfaces</h1>
+      <p class="lead">I connect atomistic computation to industrial-relevant devices — machine-learning
+      catalyst design, synthesis, operando mechanism, and membrane-electrode-assembly validation, run
+      as one closed loop.</p>
+      <div class="report-meta">
+        <span>Focus <b>catalyst–ionomer–membrane interfaces</b></span>
+        <span>Approach <b>computation + experiment</b></span>
+        <span>Group <b>SNU · Prof. Jungwon Park</b></span>
+      </div>
     </div>
 
-    <!-- Closed loop -->
+    <!-- At a glance -->
+    <section class="block">
+      <div class="sec-label">At a glance</div>
+      <div class="chips">
+        <div class="chip hl"><div class="v">13.1 <small>A cm⁻²</small></div><div class="k">noble-metal-free AEM electrolysis @ 2.0 V (flagship)</div></div>
+        <div class="chip hl"><div class="v">3,976</div><div class="k">single-atom configurations ML-screened</div></div>
+        <div class="chip"><div class="v">~1,000×</div><div class="k">faster screening than DFT (EquiformerV2)</div></div>
+        <div class="chip"><div class="v">6</div><div class="k">reaction systems — water splitting, CO₂, NH₃ oxidation &amp; more</div></div>
+      </div>
+    </section>
+
+    <!-- The closed loop (flow) -->
     <section class="block">
       <div class="sec-label">The closed loop</div>
-      <div id="loop-graphic"></div>
-      <div class="loop-note" id="loop-note"></div>
+      <h2 class="section-title">One workflow, prediction to device</h2>
+      <div class="flow">
+        <span class="st"><b>01</b> ML screening</span><span class="ar">→</span>
+        <span class="st"><b>02</b> DFT · MLIP · MD</span><span class="ar">→</span>
+        <span class="st"><b>03</b> Synthesis</span><span class="ar">→</span>
+        <span class="st"><b>04</b> Operando</span><span class="ar">→</span>
+        <span class="st"><b>05</b> MEA device</span>
+      </div>
+      <p class="lead" style="margin-top:0.9rem;">Machine-learned potentials and DFT rank thousands of
+      candidates; the winners are electrodeposited, watched under operando synchrotron and Raman, and
+      validated in zero-gap membrane-electrode assemblies — atoms to industrial current density, one loop.</p>
     </section>
 
     <!-- Directions -->
@@ -55,28 +83,29 @@
       <div id="directions" style="margin-top:1rem;"></div>
     </section>
 
-    <!-- Detail -->
+    <!-- Flagship study -->
     <section class="block">
-      <div class="sec-label">Flagship study</div>
-      <h3 style="font-size:1.35rem;margin:0.5rem 0 0.5rem;">ML-guided tungsten single atoms for noble-metal-free water electrolysis</h3>
-      <div class="prose">
-        <p>
-          My first-author <em>Nature Communications</em> (2026) study is the clearest example of
-          how I work. I fine-tuned <strong>EquiformerV2</strong> on custom DFT datasets to screen
-          <strong>3,976 single-atom oxyhydroxide configurations</strong>, identified
-          <strong>W₁-NiFeOOH</strong> as a promising catalyst, and synthesized it through scalable
-          cyclic electrodeposition. I then resolved its mechanism with operando Raman and synchrotron
-          XAS, and translated the catalyst into an anion-exchange-membrane electrolyzer that reached
-          <strong>13.1 A cm⁻² at 2.0 V</strong> under practical conditions — atomistic prediction,
-          interfacial mechanism, and device-relevant operation connected in a single closed loop.
-        </p>
+      <div class="sec-label">Flagship study · Nature Communications 2026</div>
+      <h2 class="section-title">ML-guided tungsten single atoms for noble-metal-free water electrolysis</h2>
+      <p class="lead">The clearest example of how I work: I fine-tuned EquiformerV2 on custom DFT data,
+      screened the full configuration space, identified W₁-NiFeOOH, synthesized it by scalable cyclic
+      electrodeposition, resolved its mechanism with operando spectroscopy, and validated it in an AEM
+      electrolyzer — prediction, mechanism, and device connected in one loop.</p>
+      <div class="chips">
+        <div class="chip hl"><div class="v">13.1 <small>A cm⁻²</small></div><div class="k">AEM electrolysis at 2.0 V, practical conditions</div></div>
+        <div class="chip"><div class="v">3,976</div><div class="k">single-atom oxyhydroxide configs screened</div></div>
+        <div class="chip"><div class="v">W₁-NiFeOOH</div><div class="k">noble-metal-free catalyst identified</div></div>
+        <div class="chip"><div class="v">1st</div><div class="k">first author · <em>Nat. Commun.</em> 17, 2344</div></div>
       </div>
       <figure class="pub-figure" style="margin-top:1.2rem;">
         <img src="assets/pubs/natcomm2026_fig1.jpg" alt="Machine learning-guided catalyst screening (Nature Communications 2026, Fig. 1)" loading="lazy" />
         <figcaption>Fig. 1 — ML-guided catalyst screening: EquiformerV2 + DFT, OER activity volcano, and raw-material cost analysis. <em>Nature Communications</em> 17, 2344 (2026).</figcaption>
       </figure>
+    </section>
 
-      <div class="sec-label" style="margin-top:1.8rem;">Beyond water splitting</div>
+    <!-- Beyond -->
+    <section class="block">
+      <div class="sec-label">Beyond water splitting</div>
       <div class="prose">
         <p>
           The same theory-to-device approach carries across CO₂ electroreduction, glycerol and
@@ -84,10 +113,12 @@
           oxidation. In my current postdoctoral work I am developing a multiscale computational
           framework — coupling DFT, machine-learned interatomic potentials, and molecular dynamics
           with explicit solvent — to model ion transport within anion-exchange membranes and ionomer
-          layers, validated through MEA fabrication and testing. I am also setting up and evaluating
-          direct CO₂ capture systems, toward integrating capture and electrochemical conversion
-          rather than treating them as separate processes.
+          layers, validated through MEA fabrication and testing.
         </p>
+      </div>
+      <div class="callout">
+        <b>Next:</b> integrating direct CO₂ capture with electrochemical conversion — treating capture
+        and conversion as one system rather than two separate processes.
       </div>
     </section>
   </main>
@@ -102,7 +133,6 @@
   <script src="js/main.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      renderLoopGraphic("loop-graphic", "loop-note");
       renderDirections("directions");
     });
   </script>

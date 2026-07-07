@@ -266,6 +266,47 @@ h2.section-title { font-size: 1.75rem; line-height: 1.2; margin-bottom: 1.4rem; 
   background: var(--surface);
 }
 
+/* ============================================================
+   Report components (clean report / roadmap style)
+   ============================================================ */
+.report-head {
+  padding: 3rem 0 0;
+  border-bottom: 2px solid var(--text);
+  padding-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.report-head h1 { font-size: clamp(1.8rem, 4vw, 2.3rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; margin: 0.5rem 0 0.7rem; }
+.report-head .lead { color: var(--text-soft); max-width: 68ch; margin: 0 0 1rem; }
+.report-meta { display: flex; flex-wrap: wrap; gap: 0.5rem 1.6rem; color: var(--text-soft); font-size: 0.85rem; }
+.report-meta span b { color: var(--text); font-weight: 600; }
+.report-meta span { display: inline-flex; gap: 0.4rem; }
+
+.lead { color: var(--text-soft); max-width: 70ch; }
+
+/* stat chips */
+.chips { display: grid; grid-template-columns: repeat(auto-fit, minmax(168px, 1fr)); gap: 0.7rem; margin: 0.3rem 0 0; }
+.chip { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 0.9rem 1rem; }
+.chip .v { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; line-height: 1.05; }
+.chip .v small { font-size: 0.78rem; font-weight: 600; color: var(--text-soft); margin-left: 0.15rem; }
+.chip .k { font-size: 0.8rem; color: var(--text-soft); margin-top: 0.35rem; line-height: 1.4; }
+.chip.hl { border-color: var(--accent); background: var(--accent-soft); }
+.chip.hl .v { color: var(--accent); }
+.chip.hl .k { color: var(--text); }
+
+/* horizontal flow pipeline */
+.flow { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin: 0.3rem 0; font-family: var(--mono); font-size: 0.78rem; }
+.flow .st { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 0.5rem 0.75rem; }
+.flow .st b { color: var(--accent); font-weight: 700; margin-right: 0.15rem; }
+.flow .ar { color: var(--text-faint); }
+
+/* callout (warm) */
+.callout { border-left: 3px solid var(--accent-warm); background: var(--warm-soft); border-radius: 0 8px 8px 0; padding: 0.9rem 1.1rem; margin: 1.1rem 0; max-width: 76ch; color: var(--text-soft); }
+.callout b { color: var(--accent-warm); }
+
+@media (max-width: 560px) {
+  .chips { grid-template-columns: 1fr 1fr; }
+}
+
 /* ---------- Publications-per-year bar chart ---------- */
 .tl-chart {
   display: flex; align-items: flex-end; gap: 0.5rem;
