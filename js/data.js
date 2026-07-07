@@ -450,16 +450,17 @@ const HIGHLIGHT_AUTHOR = "J. Kim";
 
 // ---- News / updates ---------------------------------------------
 // Newest first. Use "YYYY-MM" where the month is known, else "YYYY".
+// `type` drives a color-coded tag: paper · talk · award · milestone.
 const NEWS = [
-  { date: "2026-04", html: "First-author paper published in <em>Nature Communications</em> — ML-guided W₁-NiFeOOH for noble-metal-free water electrolysis." },
-  { date: "2025-03", html: "Started postdoctoral research at Seoul National University with Prof. Jungwon Park, on electrochemical interface engineering and direct CO₂ capture." },
-  { date: "2025-02", html: "Completed Ph.D. in Materials Science & Engineering at Seoul National University (advisor: Prof. Ho Won Jang)." },
-  { date: "2025", html: "Co-first-author paper on highly dense Ni single-atom catalysts for CO₂ electroreduction published in <em>Small</em>." },
-  { date: "2024-03", html: "Filed a Korean patent (pending) on a catalyst electrode and manufacturing method for water electrolysis." },
-  { date: "2023-04", html: "Gave an oral presentation at the <em>MRS Spring Meeting</em> in San Francisco, USA." },
-  { date: "2023", html: "Co-authored paper on atomically dispersed iridium catalysts for photoelectrochemical water splitting published in <em>Nature Communications</em>." },
-  { date: "2022-06", html: "Gave an oral presentation at <em>Nano 2022</em> in Seville, Spain." },
-  { date: "2021", html: "Received Best Oral Presentation Awards at IUMRS-ICA 2021 and KIEEME 2021." },
+  { date: "2026-04", type: "paper", html: "First-author paper published in <em>Nature Communications</em> — ML-guided W₁-NiFeOOH for noble-metal-free water electrolysis." },
+  { date: "2025-03", type: "milestone", html: "Started postdoctoral research at Seoul National University with Prof. Jungwon Park, on electrochemical interface engineering and direct CO₂ capture." },
+  { date: "2025-02", type: "milestone", html: "Completed Ph.D. in Materials Science & Engineering at Seoul National University (advisor: Prof. Ho Won Jang)." },
+  { date: "2025", type: "paper", html: "Co-first-author paper on highly dense Ni single-atom catalysts for CO₂ electroreduction published in <em>Small</em>." },
+  { date: "2024-03", type: "milestone", html: "Filed a Korean patent (pending) on a catalyst electrode and manufacturing method for water electrolysis." },
+  { date: "2023-04", type: "talk", html: "Gave an oral presentation at the <em>MRS Spring Meeting</em> in San Francisco, USA." },
+  { date: "2023", type: "paper", html: "Co-authored paper on atomically dispersed iridium catalysts for photoelectrochemical water splitting published in <em>Nature Communications</em>." },
+  { date: "2022-06", type: "talk", html: "Gave an oral presentation at <em>Nano 2022</em> in Seville, Spain." },
+  { date: "2021", type: "award", html: "Received Best Oral Presentation Awards at IUMRS-ICA 2021 and KIEEME 2021." },
 ];
 
 // ---- CV ----------------------------------------------------------

@@ -331,13 +331,19 @@ function renderWorkWithMe(containerId) {
   root.appendChild(cta);
 }
 
+const NEWS_TAG_LABEL = { paper: "Paper", talk: "Talk", award: "Award", milestone: "Milestone" };
 function renderNews(containerId, limit) {
   const root = document.getElementById(containerId);
   if (!root) return;
   (limit ? NEWS.slice(0, limit) : NEWS).forEach((n) => {
     const li = el("li");
     li.appendChild(el("span", "date", n.date));
-    li.appendChild(el("span", "what", n.html));
+    const what = el("span", "what");
+    if (n.type && NEWS_TAG_LABEL[n.type]) {
+      what.appendChild(el("span", "news-tag " + n.type, NEWS_TAG_LABEL[n.type]));
+    }
+    what.appendChild(el("span", null, n.html));
+    li.appendChild(what);
     root.appendChild(li);
   });
 }
@@ -407,9 +413,12 @@ function renderSkills(containerId) {
   const root = document.getElementById(containerId);
   if (!root) return;
   CV.skills.forEach((s) => {
-    root.appendChild(
-      el("div", "skill-row", '<span class="skill-label">' + s.label + "</span>" + s.items)
-    );
+    const row = el("div", "skill-row");
+    row.appendChild(el("div", "skill-label", s.label));
+    const tags = el("div", "skill-tags");
+    s.items.split(", ").forEach((it) => tags.appendChild(el("span", "tag", it)));
+    row.appendChild(tags);
+    root.appendChild(row);
   });
 }
 
