@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TODO: replace https://example.github.io with your deployed URL. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://example.github.io/</loc></url>
-  <url><loc>https://example.github.io/research.html</loc></url>
-  <url><loc>https://example.github.io/publications.html</loc></url>
-  <url><loc>https://example.github.io/news.html</loc></url>
-  <url><loc>https://example.github.io/cv.html</loc></url>
+  <url><loc>https://flash-jaehyun.github.io/</loc></url>
+  <url><loc>https://flash-jaehyun.github.io/research.html</loc></url>
+  <url><loc>https://flash-jaehyun.github.io/publications.html</loc></url>
+  <url><loc>https://flash-jaehyun.github.io/news.html</loc></url>
+  <url><loc>https://flash-jaehyun.github.io/cv.html</loc></url>
 </urlset>
