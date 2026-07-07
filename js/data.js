@@ -444,9 +444,9 @@ const NEWS = [
 // ---- CV ----------------------------------------------------------
 const CV = {
   education: [
-    { period: "2025 – present", title: "Postdoctoral Researcher, Chemical & Biological Engineering", where: "Seoul National University — advisor: Prof. Jungwon Park" },
-    { period: "2020 – 2025", title: "Ph.D., Materials Science & Engineering", where: "Seoul National University — advisor: Prof. Ho Won Jang" },
-    { period: "2015 – 2019", title: "B.S., Materials Science & Engineering (cum laude)", where: "POSTECH — advisor: Prof. Dongwha Lee" },
+    { period: "2025 – present", title: "Postdoctoral Researcher, Chemical & Biological Engineering", where: "Seoul National University — advisor: Prof. Jungwon Park", keywords: ["Electrochemical interfaces", "MLIP + MD", "MEA devices", "CO₂ capture"] },
+    { period: "2020 – 2025", title: "Ph.D., Materials Science & Engineering", where: "Seoul National University — advisor: Prof. Ho Won Jang", keywords: ["Single-atom catalysts", "DFT", "operando XAS / Raman", "water electrolysis"] },
+    { period: "2015 – 2019", title: "B.S., Materials Science & Engineering (cum laude)", where: "POSTECH — advisor: Prof. Dongwha Lee", keywords: ["Materials Science"] },
   ],
   experience: [
     { period: "2022 – 2025", title: "KRISS–SNU MPI project", where: "Single-atom catalysts for anion-exchange-membrane water electrolysis" },

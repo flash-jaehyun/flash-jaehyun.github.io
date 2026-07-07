@@ -375,9 +375,13 @@ function renderCVList(containerId, entries) {
   entries.forEach((e) => {
     const row = el("div", "cv-entry");
     row.appendChild(el("div", "period", e.period));
-    row.appendChild(
-      el("div", "what", "<strong>" + e.title + "</strong><span>" + e.where + "</span>")
-    );
+    const what = el("div", "what", "<strong>" + e.title + "</strong><span>" + e.where + "</span>");
+    if (e.keywords && e.keywords.length) {
+      const tags = el("div", "cv-tags");
+      e.keywords.forEach((k) => tags.appendChild(el("span", "tag", k)));
+      what.appendChild(tags);
+    }
+    row.appendChild(what);
     root.appendChild(row);
   });
 }
