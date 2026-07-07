@@ -399,13 +399,22 @@ function fillProfile() {
     else node.remove(); // hide links with no URL set
   });
 
-  // hero eyebrow: role only
+  // hero eyebrow: field / role
   const eb = document.getElementById("hero-eyebrow");
   if (eb) eb.textContent = PROFILE.role;
 
-  // hero affiliation line: Name — Title, Institution
-  const affil = document.getElementById("hero-affil");
-  if (affil) affil.textContent = PROFILE.name + " — " + PROFILE.title + ", " + PROFILE.institution;
+  // hero identity block — scannable, not prose
+  const hiName = document.getElementById("hi-name");
+  if (hiName) hiName.textContent = PROFILE.name;
+  const hiRole = document.getElementById("hi-role");
+  if (hiRole) hiRole.innerHTML = PROFILE.title + " · <strong>" + PROFILE.institution + "</strong>";
+  const hiMeta = document.getElementById("hi-meta");
+  if (hiMeta) {
+    const bits = [];
+    if (PROFILE.department) bits.push(PROFILE.department);
+    if (PROFILE.advisor) bits.push("Advisor: " + PROFILE.advisor);
+    hiMeta.textContent = bits.join(" · ");
+  }
 
   // hero flagship credential (linked)
   const flag = document.getElementById("hero-flagship");

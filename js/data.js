@@ -11,6 +11,7 @@ const PROFILE = {
   initial: "JK",
   title: "Postdoctoral Researcher",
   institution: "Seoul National University",
+  department: "School of Chemical & Biological Engineering",
   role: "Electrochemical Interfaces · Computation + Experiment",
   // Big first-screen statement (the H1).
   headline: "I compute the catalyst, then build the device that proves it.",

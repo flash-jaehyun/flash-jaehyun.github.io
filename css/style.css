@@ -322,8 +322,16 @@ h2.section-title { font-size: 1.75rem; line-height: 1.2; margin-bottom: 1.4rem; 
 }
 .skip-link:focus { left: 0; text-decoration: none; }
 
-/* ---------- Hero affiliation + flagship credential ---------- */
-.hero-affil { font-size: 0.98rem; color: var(--text); margin-bottom: 0.9rem; }
+/* ---------- Hero identity block + flagship credential ---------- */
+.hero-identity {
+  margin-bottom: 1rem;
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--line-strong);
+}
+.hi-name { font-size: 1.2rem; font-weight: 600; color: var(--text); letter-spacing: -0.01em; }
+.hi-role { font-size: 0.98rem; color: var(--text-soft); margin-top: 0.15rem; }
+.hi-role strong { color: var(--text); font-weight: 600; }
+.hi-meta { font-size: 0.85rem; color: var(--text-faint); margin-top: 0.15rem; }
 .hero-flagship {
   font-size: 0.9rem; color: var(--text-soft);
   border-left: 2px solid var(--accent);
