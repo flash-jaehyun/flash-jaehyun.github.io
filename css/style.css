@@ -391,6 +391,14 @@ h2.section-title { font-size: 1.75rem; line-height: 1.2; margin-bottom: 1.4rem; 
   font-family: var(--mono); font-size: 0.74rem; color: var(--text-faint);
   margin-top: 1.4rem; letter-spacing: 0.02em;
 }
+/* Compact affiliation timeline (top of page) */
+.affil-timeline {
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  gap: 0.35rem 0.9rem; margin-top: 1.4rem; font-size: 0.84rem; color: var(--text-soft);
+}
+.affil-timeline .at-item b { color: var(--text); font-weight: 600; }
+.affil-timeline .at-item .yr { font-family: var(--mono); font-size: 0.72rem; color: var(--text-faint); }
+.affil-timeline .at-sep { color: var(--text-faint); }
 
 /* metric sub-line + highlighted venue */
 .metric .msub {

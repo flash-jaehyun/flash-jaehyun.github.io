@@ -24,7 +24,7 @@
       document.documentElement.dataset.theme = s || (d ? "dark" : "light");
     })();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=8" />
+  <link rel="stylesheet" href="css/style.css?v=9" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -211,11 +211,12 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=8"></script>
-  <script src="js/main.js?v=8"></script>
+  <script src="js/data.js?v=9"></script>
+  <script src="js/main.js?v=9"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       renderMetrics("metrics");
+      renderAffilTimeline("affiliations-strip");
       renderLoopGraphic("loop-graphic", "loop-note");
       renderDirections("directions");
       renderPublications("pubs-all", "recent", null, 6);

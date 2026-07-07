@@ -490,6 +490,23 @@ function setupReveal() {
   document.querySelectorAll("section.block").forEach((b) => b.classList.add("in"));
 }
 
+// Compact affiliation timeline near the top (from CV.education).
+function renderAffilTimeline(containerId) {
+  const root = document.getElementById(containerId);
+  if (!root || typeof CV === "undefined" || !CV.education) return;
+  root.innerHTML = "";
+  const wrap = el("div", "affil-timeline");
+  CV.education.forEach((e, i) => {
+    if (i > 0) wrap.appendChild(el("span", "at-sep", "·"));
+    const org = e.org || (e.where ? e.where.split(" — ")[0] : "");
+    const item = el("span", "at-item",
+      "<b>" + org + "</b> " + (e.short || "") +
+      ' <span class="yr">' + (e.period || "").replace(" – ", "–").replace(" present", " now") + "</span>");
+    wrap.appendChild(item);
+  });
+  root.appendChild(wrap);
+}
+
 // Scroll-spy for the single-page nav: highlight the section in view.
 function setupScrollSpy() {
   const links = [...document.querySelectorAll('nav.main-nav a[href^="#"]')];
