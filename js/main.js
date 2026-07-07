@@ -474,33 +474,33 @@ function fillProfile() {
   if (y) y.textContent = new Date().getFullYear();
 }
 
-// Subtle fade-up as sections enter the viewport. Elements already on
-// screen at load are shown immediately (no flash).
+// Sections are shown immediately (no fade). On the single-page layout a
+// fade-until-scroll would hide anchor-jump targets, so we keep it off.
 function setupReveal() {
-  const blocks = document.querySelectorAll("section.block");
-  if (!("IntersectionObserver" in window) || !blocks.length) {
-    blocks.forEach((b) => b.classList.add("in"));
-    return;
-  }
+  document.querySelectorAll("section.block").forEach((b) => b.classList.add("in"));
+}
+
+// Scroll-spy for the single-page nav: highlight the section in view.
+function setupScrollSpy() {
+  const links = [...document.querySelectorAll('nav.main-nav a[href^="#"]')];
+  if (!links.length || !("IntersectionObserver" in window)) return;
+  const map = {};
+  links.forEach((a) => {
+    const s = document.getElementById(a.getAttribute("href").slice(1));
+    if (s) map[s.id] = a;
+  });
   const io = new IntersectionObserver(
     (entries) => {
       entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add("in");
-          io.unobserve(e.target);
+        if (e.isIntersecting && map[e.target.id]) {
+          links.forEach((a) => a.classList.remove("active"));
+          map[e.target.id].classList.add("active");
         }
       });
     },
-    { threshold: 0.08 }
+    { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
   );
-  blocks.forEach((b) => {
-    if (b.getBoundingClientRect().top < window.innerHeight * 0.9) {
-      b.classList.add("in"); // above the fold — no hide, no flash
-    } else {
-      b.classList.add("reveal");
-      io.observe(b);
-    }
-  });
+  Object.keys(map).forEach((id) => io.observe(document.getElementById(id)));
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -509,10 +509,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const btn = document.getElementById("theme-toggle");
   if (btn) btn.addEventListener("click", toggleTheme);
 
+  // multi-page fallback: mark active by filename (ignored when nav uses #anchors)
   const page = location.pathname.split("/").pop() || "index.html";
-  document.querySelectorAll("nav.main-nav a").forEach((a) => {
+  document.querySelectorAll('nav.main-nav a:not([href^="#"])').forEach((a) => {
     if (a.getAttribute("href") === page) a.classList.add("active");
   });
 
   setupReveal();
+  setupScrollSpy();
 });
