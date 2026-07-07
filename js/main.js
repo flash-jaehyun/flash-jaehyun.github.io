@@ -370,6 +370,39 @@ function renderCVList(containerId, entries) {
   });
 }
 
+function renderBio(textId, copyBtnId) {
+  const t = document.getElementById(textId);
+  if (t && typeof BIO === "string") t.innerHTML = BIO;
+  const btn = document.getElementById(copyBtnId);
+  if (btn && typeof BIO_SHORT === "string") {
+    const flash = () => {
+      const o = "Copy short bio";
+      btn.textContent = "Copied ✓";
+      btn.classList.add("active");
+      setTimeout(() => { btn.textContent = o; btn.classList.remove("active"); }, 1600);
+    };
+    const fallbackCopy = () => {
+      const ta = document.createElement("textarea");
+      ta.value = BIO_SHORT;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.focus(); ta.select();
+      let ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      if (ok) flash(); else window.prompt("Copy the short bio:", BIO_SHORT);
+    };
+    btn.addEventListener("click", () => {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(BIO_SHORT).then(flash).catch(fallbackCopy);
+      } else {
+        fallbackCopy();
+      }
+    });
+  }
+}
+
 function renderSkills(containerId) {
   const root = document.getElementById(containerId);
   if (!root) return;

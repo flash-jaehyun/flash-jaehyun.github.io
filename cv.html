@@ -46,6 +46,14 @@
     </div>
 
     <section class="block">
+      <div class="section-title-row">
+        <div class="sec-label" style="margin-bottom:0;">Biography</div>
+        <button class="filter-chip" id="copy-bio" type="button">Copy short bio</button>
+      </div>
+      <p class="prose" id="bio-text" style="margin-top:1rem;"></p>
+    </section>
+
+    <section class="block">
       <div class="sec-label">Education</div>
       <div id="cv-education"></div>
     </section>
@@ -91,6 +99,7 @@
   <script src="js/main.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      renderBio("bio-text", "copy-bio");
       renderCVList("cv-education", CV.education);
       renderCVList("cv-experience", CV.experience);
       renderSkills("cv-skills");

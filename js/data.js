@@ -67,6 +67,33 @@ const ABOUT =
   "screening, atomistic modeling, scalable synthesis, operando X-ray and Raman analysis, " +
   "and membrane-electrode-assembly validation — end to end.";
 
+// ---- Biography (career narrative, shown on the CV page) ----------
+// First-person narrative arc; may contain simple <strong>/<em>.
+const BIO =
+  "I am a postdoctoral researcher at Seoul National University (School of Chemical & " +
+  "Biological Engineering), working with Prof. Jungwon Park. I completed my Ph.D. in " +
+  "Materials Science & Engineering at SNU under Prof. Ho Won Jang, where my thesis " +
+  "established the rational design and mechanistic understanding of single-atom catalysts " +
+  "for electrochemical energy conversion, following a B.S. (<em>cum laude</em>) at POSTECH. " +
+  "My research connects atomistic computation to industrial-relevant devices: I fine-tune " +
+  "machine-learned interatomic potentials and DFT to screen catalysts, synthesize the best " +
+  "candidates by electrodeposition, resolve their mechanisms with operando synchrotron and " +
+  "Raman spectroscopy, and validate them in zero-gap membrane-electrode assemblies. This " +
+  "closed loop produced <strong>W₁-NiFeOOH</strong>, a noble-metal-free water-electrolysis " +
+  "catalyst first-authored in <em>Nature Communications</em> (2026). Across 39 papers " +
+  "(12 first or co-first, 1,574 citations, h-index 23), I have worked on water electrolysis, " +
+  "CO₂ reduction and capture, and ammonia oxidation, and I now focus on design rules for " +
+  "catalyst-ionomer-membrane interfaces that stay selective and durable at industrial current density.";
+
+// Short third-person bio (for conference intros) — copyable on the CV page.
+const BIO_SHORT =
+  "Jaehyun Kim is a postdoctoral researcher at Seoul National University working on " +
+  "electrochemical interface engineering. He connects machine-learning catalyst design and " +
+  "DFT/MLIP simulation to synthesis, operando spectroscopy, and membrane-electrode-assembly " +
+  "devices. His first-author work in Nature Communications (2026) introduced the " +
+  "noble-metal-free W1-NiFeOOH catalyst for anion-exchange-membrane water electrolysis. " +
+  "He holds a Ph.D. from Seoul National University.";
+
 // ---- Work with me (collaboration invitation) --------------------
 const WORKWITHME = {
   headline: "Let's close the loop together",
