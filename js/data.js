@@ -70,20 +70,12 @@ const ABOUT =
 // ---- Biography (career narrative, shown on the CV page) ----------
 // First-person narrative arc; may contain simple <strong>/<em>.
 const BIO =
-  "I am a postdoctoral researcher at Seoul National University (School of Chemical & " +
-  "Biological Engineering), working with Prof. Jungwon Park. I completed my Ph.D. in " +
-  "Materials Science & Engineering at SNU under Prof. Ho Won Jang, where my thesis " +
-  "established the rational design and mechanistic understanding of single-atom catalysts " +
-  "for electrochemical energy conversion, following a B.S. (<em>cum laude</em>) at POSTECH. " +
-  "My research connects atomistic computation to industrial-relevant devices: I fine-tune " +
-  "machine-learned interatomic potentials and DFT to screen catalysts, synthesize the best " +
-  "candidates by electrodeposition, resolve their mechanisms with operando synchrotron and " +
-  "Raman spectroscopy, and validate them in zero-gap membrane-electrode assemblies. This " +
-  "closed loop produced <strong>W₁-NiFeOOH</strong>, a noble-metal-free water-electrolysis " +
-  "catalyst first-authored in <em>Nature Communications</em> (2026). Across 39 papers " +
-  "(12 first or co-first, 1,574 citations, h-index 23), I have worked on water electrolysis, " +
-  "CO₂ reduction and capture, and ammonia oxidation, and I now focus on design rules for " +
-  "catalyst-ionomer-membrane interfaces that stay selective and durable at industrial current density.";
+  "Postdoctoral researcher at Seoul National University (Prof. Jungwon Park), after a Ph.D. " +
+  "at SNU (Prof. Ho Won Jang) on single-atom catalysts and a B.S. (<em>cum laude</em>) at POSTECH. " +
+  "I connect machine-learning and DFT screening to synthesis, operando spectroscopy, and " +
+  "membrane-electrode-assembly devices — one closed loop, which produced the noble-metal-free " +
+  "<strong>W₁-NiFeOOH</strong> catalyst (first-author, <em>Nature Communications</em> 2026). " +
+  "39 papers · 12 first/co-first · 1,574 citations.";
 
 // Short third-person bio (for conference intros) — copyable on the CV page.
 const BIO_SHORT =
@@ -99,17 +91,15 @@ const WORKWITHME = {
   headline: "Let's close the loop together",
   // `pitch` may contain simple <strong> emphasis.
   pitch:
-    "I connect computational catalyst design to working electrochemical devices — " +
-    "machine-learning screening and DFT/MLIP simulation through synthesis, operando " +
-    "spectroscopy, and zero-gap MEA testing. I like collaborations where a prediction " +
-    "meets a real electrode — that is how W₁-NiFeOOH went from a computational screen to a " +
-    "working noble-metal-free electrolyzer. Whether you bring theory, materials, spectroscopy, " +
-    "or a device problem, I would enjoy building on it together.",
+    "I connect computational catalyst design to working devices — screening and simulation " +
+    "through synthesis, operando spectroscopy, and MEA testing. I like collaborations where a " +
+    "prediction meets a real electrode. Whether you bring theory, materials, spectroscopy, or a " +
+    "device problem, let's build on it together.",
   brings: [
-    "Fine-tuned EquiformerV2 screening, DFT, and machine-learned-potential MD with explicit solvent — predictions worth acting on, with a physical reason a material works.",
-    "Catalyst synthesis by electrodeposition, plus operando synchrotron XAS, Raman, and identical-location TEM to watch the interface change while it runs.",
-    "Zero-gap MEA fabrication and reactor testing across water electrolysis, CO₂ reduction, direct CO₂ capture, ammonia oxidation, and glycerol upgrading — the loop closes on a device.",
-    "Reproducible, AI-guided workflows you can pick up and rerun — the computational and experimental sides are built to speak to each other.",
+    "ML / DFT / MLIP screening — predictions worth acting on, with a physical reason they work.",
+    "Synthesis by electrodeposition + operando XAS, Raman, and IL-TEM to watch the interface while it runs.",
+    "Zero-gap MEA fabrication and reactor testing across water electrolysis, CO₂, and ammonia oxidation.",
+    "Reproducible, AI-guided workflows where computation and experiment speak to each other.",
   ],
   cta: "Open to research collaborations and new positions — a short email is the fastest way to start.",
 };
@@ -119,37 +109,25 @@ const PROJECTS = [
   {
     n: "01",
     title: "ML-guided catalyst design",
-    desc:
-      "Fine-tune EquiformerV2 on custom DFT data to screen thousands of single-atom " +
-      "oxyhydroxide configurations and pick the winner before touching a beaker — the " +
-      "noble-metal-free W₁-NiFeOOH water-electrolysis catalyst, first-authored in Nature Communications.",
+    desc: "Fine-tune EquiformerV2 on DFT data to screen thousands of single-atom configurations and pick winners before the bench.",
     tags: ["EquiformerV2", "DFT", "single-atom catalysts"],
   },
   {
     n: "02",
     title: "Synthesis to operando mechanism",
-    desc:
-      "Scalable cyclic-electrodeposition synthesis paired with operando Raman, synchrotron " +
-      "XAS, and identical-location TEM — resolving what the active interface actually does " +
-      "under reaction, not just what the model predicts.",
+    desc: "Scalable electrodeposition with operando Raman, synchrotron XAS, and IL-TEM — what the active interface really does, not just what the model predicts.",
     tags: ["operando Raman", "synchrotron XAS", "IL-TEM"],
   },
   {
     n: "03",
     title: "High-flux electrochemical interfaces",
-    desc:
-      "Noble-metal-free catalysts and catalyst-ionomer-membrane interfaces for water " +
-      "electrolysis, CO₂ reduction, and oxygenated-feed / ammonia oxidation that stay " +
-      "selective and durable at practical current densities.",
+    desc: "Noble-metal-free catalyst–ionomer–membrane interfaces that stay selective and durable at practical current density.",
     tags: ["AEM electrolysis", "CO₂ reduction", "zero-gap MEA"],
   },
   {
     n: "04",
     title: "Multiscale interface modeling",
-    desc:
-      "Couple DFT, machine-learned interatomic potentials, and explicit-solvent molecular " +
-      "dynamics to model ion transport in anion-exchange membranes and ionomer layers — " +
-      "then close the loop back to MEA fabrication and testing.",
+    desc: "DFT + machine-learned potentials + explicit-solvent MD for ion transport in anion-exchange membranes and ionomers.",
     tags: ["MLIP", "MD", "ion transport"],
   },
 ];

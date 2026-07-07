@@ -24,7 +24,7 @@
       document.documentElement.dataset.theme = s || (d ? "dark" : "light");
     })();
   </script>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=7" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -100,12 +100,6 @@
       <div id="affiliations-strip"></div>
     </section>
 
-    <!-- ================= About ================= -->
-    <section class="block" id="about">
-      <div class="sec-label">About</div>
-      <div class="prose"><p id="about-text"></p></div>
-    </section>
-
     <!-- ================= Research ================= -->
     <section class="block" id="research">
       <div class="section-head">
@@ -153,13 +147,13 @@
       <div class="section-head">
         <div class="sec-label">Publications</div>
         <h2>39 papers · 12 first / co-first author</h2>
-        <p class="lead" style="margin-top:0.2rem;">Full record also on
+        <p class="lead" style="margin-top:0.2rem;">Recent selection below · full record on
           <a data-profile-href="scholar" href="#" target="_blank" rel="noopener">Google Scholar</a>.
           <span style="white-space:nowrap;"><span class="pub-first" style="margin-left:0;">1st / co-1st</span> = first or co-first author.</span></p>
       </div>
       <div id="pub-timeline" style="margin-top:1rem;"></div>
-      <div class="pub-filter" id="pub-filter"></div>
       <div id="pubs-all"></div>
+      <button class="btn" id="pub-showall" type="button" style="margin-top:1.2rem;">Show all 38 papers →</button>
     </section>
 
     <!-- ================= News ================= -->
@@ -217,16 +211,20 @@
     </div>
   </footer>
 
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/data.js?v=7"></script>
+  <script src="js/main.js?v=7"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       renderMetrics("metrics");
       renderLoopGraphic("loop-graphic", "loop-note");
       renderDirections("directions");
-      renderPublications("pubs-all", "all");
-      setupPubFilter("pub-filter", "pubs-all");
-      renderPubTimeline("pub-timeline", "pubs-all", "pub-filter");
+      renderPublications("pubs-all", "recent", null, 6);
+      renderPubTimeline("pub-timeline", "pubs-all", null);
+      const showAll = document.getElementById("pub-showall");
+      if (showAll) showAll.addEventListener("click", () => {
+        renderPublications("pubs-all", "all");
+        showAll.remove();
+      });
       renderNews("news-all");
       renderBio("bio-text", "copy-bio");
       renderCVList("cv-education", CV.education);

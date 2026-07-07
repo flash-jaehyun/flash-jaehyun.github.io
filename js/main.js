@@ -183,13 +183,17 @@ function renderLoopGraphic(containerId, noteId) {
   setNote(defaultNote);
 }
 
-function renderPublications(containerId, mode, predicate) {
-  // mode: "selected" (homepage) or "all" (grouped by year)
+function renderPublications(containerId, mode, predicate, limit) {
+  // mode: "selected" | "recent" (flat, newest N) | "all" (grouped by year)
   // predicate: optional filter (p) => boolean
+  const flat = mode === "selected" || mode === "recent";
   const root = document.getElementById(containerId);
   if (!root) return;
   root.innerHTML = "";
-  let pubs = mode === "selected" ? PUBLICATIONS.filter((p) => p.selected) : PUBLICATIONS.slice();
+  let pubs;
+  if (mode === "selected") pubs = PUBLICATIONS.filter((p) => p.selected);
+  else if (mode === "recent") pubs = PUBLICATIONS.slice(0, limit || 6);
+  else pubs = PUBLICATIONS.slice();
   if (predicate) pubs = pubs.filter(predicate);
 
   if (!pubs.length) {
@@ -199,7 +203,7 @@ function renderPublications(containerId, mode, predicate) {
 
   let lastYear = null;
   pubs.forEach((p) => {
-    if (mode !== "selected" && p.year !== lastYear) {
+    if (!flat && p.year !== lastYear) {
       const yh = el("div", "pub-year", String(p.year));
       yh.dataset.year = p.year;
       root.appendChild(yh);
@@ -219,7 +223,7 @@ function renderPublications(containerId, mode, predicate) {
     const venue =
       '<em class="' + venueClass + '">' + p.venue + "</em>" +
       (p.venueDetail ? " " + p.venueDetail : "") +
-      (mode === "selected" ? " · " + p.year : "");
+      (flat ? " · " + p.year : "");
     item.appendChild(el("div", "pub-venue", venue));
     const links = el("div", "pub-links");
     Object.entries(p.links || {}).forEach(([k, url]) => {
@@ -276,6 +280,8 @@ function renderPubTimeline(containerId, listContainerId, chipsId) {
       chips.forEach((c) => c.classList.remove("active"));
       if (chips[0]) chips[0].classList.add("active");
       renderPublications(listContainerId, "all");
+      const sa = document.getElementById("pub-showall");
+      if (sa) sa.remove();
       const head = document.querySelector(
         "#" + listContainerId + ' .pub-year[data-year="' + y + '"]'
       );
