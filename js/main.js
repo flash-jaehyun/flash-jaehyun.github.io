@@ -468,15 +468,6 @@ function fillProfile() {
     hiMeta.textContent = bits.join(" · ");
   }
 
-  // hero flagship credential (linked)
-  const flag = document.getElementById("hero-flagship");
-  if (flag && PROFILE.flagship) {
-    flag.innerHTML = "";
-    const a = el("a", null, PROFILE.flagship.text);
-    if (PROFILE.flagship.url) { a.href = PROFILE.flagship.url; a.target = "_blank"; a.rel = "noopener"; }
-    flag.appendChild(a);
-  }
-
   const about = document.getElementById("about-text");
   if (about && typeof ABOUT === "string") about.textContent = ABOUT;
 
