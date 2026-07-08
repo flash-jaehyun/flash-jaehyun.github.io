@@ -136,6 +136,7 @@ const PUBLICATIONS = [
     authors: "J. Kim, I. S. Kwon, J. Lim, S. A. Lee, W. S. Cheon, J. H. Cho, S. H. Park, Y. J. Kim, M. G. Lee, K. C. Kwon, S. H. Park, S. Y. Kim, H. W. Jang",
     venue: "Nature Communications", venueDetail: "17, 2344",
     links: { doi: "https://doi.org/10.1038/s41467-026-68735-3" },
+    tags: ["MLIP", "DFT", "AEM", "single-atom"],
     image: "assets/pubs/natcomm2026_fig1.jpg",
     imageCaption: "Fig. 1 — ML-guided catalyst screening: EquiformerV2 + DFT, OER activity volcano, and raw-material cost analysis.",
   },
@@ -173,6 +174,7 @@ const PUBLICATIONS = [
     authors: "J. H. Kim, J. Kim, J. Ma, J. H. Cho, J. Jeong, S. Iimura, H. W. Jang, S. Y. Kim",
     venue: "Small", venueDetail: "2409481",
     links: {},
+    tags: ["CO₂R", "single-atom"],
   },
   {
     year: 2025, first: true, selected: false,
@@ -329,6 +331,7 @@ const PUBLICATIONS = [
     authors: "S. E. Jun, Y. H. Kim, J. Kim, W. S. Cheon, S. Choi, et al., J. Moon, S-H. Kim, H. W. Jang",
     venue: "Nature Communications", venueDetail: "14, 609",
     links: {}, // TODO: add "doi" once confirmed
+    tags: ["PEC", "single-atom", "water splitting"],
   },
   {
     year: 2023, first: true, selected: false,
@@ -406,6 +409,7 @@ const PUBLICATIONS = [
     authors: "J. Kim, D. Kang, S. Kim, H. W. Jang",
     venue: "ACS Materials Letters", venueDetail: "3, 1151–1171",
     links: {},
+    tags: ["ML", "review"],
   },
   {
     year: 2020, first: false, selected: false,

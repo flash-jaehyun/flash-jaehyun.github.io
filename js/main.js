@@ -47,6 +47,29 @@ function boldMe(authors) {
     .join(", ");
 }
 
+// Topic / method tags for a publication: explicit p.tags when curated,
+// else derived from the title so every entry is tagged and filterable.
+function tagsOf(p) {
+  return p.tags && p.tags.length ? p.tags : deriveTags(p);
+}
+function deriveTags(p) {
+  const t = (p.title || "").toLowerCase();
+  const out = [];
+  const add = (tag, re) => { if (re.test(t) && !out.includes(tag)) out.push(tag); };
+  add("ML", /machine.learning|artificial intelligence|equiformer|catalyze materials science with machine/);
+  add("single-atom", /single.atom|single atoms|atomically dispersed/);
+  add("AOR", /ammonia oxidation|nitrite/);
+  add("CO₂R", /co₂|co2/);
+  add("AEM", /anion exchange membrane|aem water/);
+  add("PEC", /photoanode|photoelectrochemical|photoelectro|solar.*(water|split|hydrogen)/);
+  add("neuromorphic", /memristor|synapse|synaptic|neuromorphic|neurocomputing|conducting.bridge|\bmemory\b/);
+  add("sensors", /sensor|detection|sensing|monitoring/);
+  add("water splitting", /water splitting|water electrolysis|oxygen evolution|hydrogen evolution|hydrogen production|green hydrogen|water oxidation/);
+  add("MOF", /\bmofs?\b|metal.organic framework/);
+  add("review", /\breview\b|challenges and strategies|roadmap|can artificial/);
+  return out.slice(0, 3);
+}
+
 // ---------- renderers ----------
 function renderMetrics(containerId) {
   const root = document.getElementById(containerId);
@@ -240,16 +263,11 @@ function renderPublications(containerId, mode, predicate, limit) {
       links.appendChild(a);
     });
     if (links.children.length) item.appendChild(links);
-    // Featured figure (homepage only)
-    if (mode === "selected" && p.image) {
-      const fig = el("figure", "pub-figure");
-      const img = el("img");
-      img.src = p.image;
-      img.alt = p.title;
-      img.loading = "lazy";
-      fig.appendChild(img);
-      if (p.imageCaption) fig.appendChild(el("figcaption", null, p.imageCaption));
-      item.appendChild(fig);
+    const tags = tagsOf(p);
+    if (tags.length) {
+      const tagWrap = el("div", "pub-tags");
+      tags.forEach((t) => tagWrap.appendChild(el("span", "pub-tag", t)));
+      item.appendChild(tagWrap);
     }
     root.appendChild(item);
   });
@@ -316,6 +334,13 @@ function setupPubFilter(chipsId, containerId) {
     { key: "first", label: "First / co-first", fn: (p) => p.first },
     { key: "featured", label: "Featured", fn: (p) => p.selected },
   ];
+  // Topic filters, derived from the whole record (only tags on >= 2 papers).
+  const tagCounts = {};
+  PUBLICATIONS.forEach((p) => tagsOf(p).forEach((t) => { tagCounts[t] = (tagCounts[t] || 0) + 1; }));
+  Object.keys(tagCounts)
+    .filter((t) => tagCounts[t] >= 2)
+    .sort((a, b) => tagCounts[b] - tagCounts[a])
+    .forEach((t) => defs.push({ key: "tag:" + t, label: t, fn: (p) => tagsOf(p).includes(t) }));
   defs.forEach((d, i) => {
     const b = el("button", "filter-chip" + (i === 0 ? " active" : ""), d.label);
     b.addEventListener("click", () => {

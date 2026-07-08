@@ -480,6 +480,17 @@ h2.section-title { font-size: 1.75rem; line-height: 1.2; margin-bottom: 1.4rem; 
 .pub-item .pub-links { margin-top: 0.45rem; display: flex; gap: 0.9rem; flex-wrap: wrap; }
 .pub-item .pub-links a { font-family: var(--mono); font-size: 0.72rem; color: var(--text-soft); border-bottom: 1px solid var(--line-strong); }
 .pub-item .pub-links a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+.pub-item .pub-tags { margin-top: 0.5rem; display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.pub-item .pub-tag {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.02em;
+  color: var(--text-soft);
+  background: var(--warm-soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.13rem 0.55rem;
+}
 
 /* ---------- News ---------- */
 .news-list { list-style: none; }
