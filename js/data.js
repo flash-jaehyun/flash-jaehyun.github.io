@@ -100,25 +100,25 @@ const WORKWITHME = {
 // ---- Research directions (the four pillars) ---------------------
 const PROJECTS = [
   {
-    n: "01",
+    n: "01", phase: "comp",
     title: "ML-guided catalyst design",
     desc: "Fine-tune EquiformerV2 on DFT data to screen single-atom catalyst configurations before synthesis.",
     tags: ["EquiformerV2", "DFT", "single-atom catalysts"],
   },
   {
-    n: "02",
+    n: "02", phase: "exp",
     title: "Synthesis and operando mechanism",
     desc: "Electrodeposition combined with operando Raman, synchrotron XAS, and identical-location TEM to resolve reaction mechanisms.",
     tags: ["operando Raman", "synchrotron XAS", "IL-TEM"],
   },
   {
-    n: "03",
+    n: "03", phase: "exp",
     title: "High-flux electrochemical interfaces",
     desc: "Noble-metal-free catalyst, ionomer, and membrane interfaces that remain selective and durable at practical current density.",
     tags: ["AEM electrolysis", "CO₂ reduction", "zero-gap MEA"],
   },
   {
-    n: "04",
+    n: "04", phase: "comp",
     title: "Multiscale interface modeling",
     desc: "DFT, machine-learned potentials, and explicit-solvent MD for ion transport in anion-exchange membranes and ionomers.",
     tags: ["MLIP", "MD", "ion transport"],

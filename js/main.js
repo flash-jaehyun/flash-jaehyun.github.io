@@ -201,10 +201,15 @@ function renderPublications(containerId, mode, predicate, limit) {
     return;
   }
 
+  // Per-year counts for grouped headers (respect the active predicate filter).
+  const yearCounts = {};
+  if (!flat) pubs.forEach((p) => { yearCounts[p.year] = (yearCounts[p.year] || 0) + 1; });
+
   let lastYear = null;
   pubs.forEach((p) => {
     if (!flat && p.year !== lastYear) {
-      const yh = el("div", "pub-year", String(p.year));
+      const yh = el("div", "pub-year",
+        String(p.year) + ' <span class="pub-year-count">(' + yearCounts[p.year] + ')</span>');
       yh.dataset.year = p.year;
       root.appendChild(yh);
       lastYear = p.year;
@@ -360,7 +365,7 @@ function renderDirections(containerId) {
   const root = document.getElementById(containerId);
   if (!root) return;
   PROJECTS.forEach((p) => {
-    const row = el("div", "direction");
+    const row = el("div", "direction " + (p.phase === "exp" ? "exp" : "comp"));
     row.appendChild(el("div", "dnum", p.n || ""));
     row.appendChild(el("h3", null, p.title));
     row.appendChild(el("div", "ddesc", p.desc));

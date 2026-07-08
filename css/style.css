@@ -4,34 +4,35 @@
    ============================================================ */
 
 :root {
-  --bg: #ffffff;
-  --surface: #fbfbfa;
-  --text: #1a1c20;
-  --text-soft: #5c626c;
-  --text-faint: #9aa0aa;
-  --line: #e7e8ea;
-  --line-strong: #d4d6d9;
+  --bg: #faf8f2;            /* warm paper */
+  --surface: #ffffff;
+  --text: #221d16;          /* warm near-black */
+  --text-soft: #5c5546;
+  --text-faint: #948c7c;
+  --line: #e8e1d5;
+  --line-strong: #d5cdbc;
   --accent: #17605e;        /* deep teal */
-  --accent-soft: #e8f1f0;
-  --accent-warm: #b5652a;   /* warm counterpart (experiment) */
-  --warm-soft: #f6ebe1;
+  --accent-soft: #e5efed;
+  --accent-warm: #a95f2a;   /* copper — experiment */
+  --warm-soft: #f3e8da;
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   --mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
   --maxw: 780px;
 }
 
 [data-theme="dark"] {
-  --bg: #0e1113;
-  --surface: #15191c;
-  --text: #e7e9ec;
-  --text-soft: #a2a9b3;
-  --text-faint: #6b727c;
-  --line: #262b30;
-  --line-strong: #333940;
-  --accent: #6ec8c2;
-  --accent-soft: #16302e;
+  --bg: #17130d;            /* warm charcoal */
+  --surface: #211c15;
+  --text: #ece7dd;
+  --text-soft: #a89f8d;
+  --text-faint: #726a5a;
+  --line: #2c261e;
+  --line-strong: #3b352b;
+  --accent: #74c9c1;
+  --accent-soft: #16302d;
   --accent-warm: #e0975f;
-  --warm-soft: #3a2b1e;
+  --warm-soft: #342a1b;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -65,6 +66,12 @@ img, svg { display: block; max-width: 100%; }
 }
 
 h1, h2, h3 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.02em; }
+/* Warm editorial serif for the name and major section headers */
+.hero h1, .section-head h2, h2.section-title, .page-head h1, .report-head h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: 0;
+}
 
 /* ---------- Header / nav ---------- */
 header.site-header {
@@ -462,6 +469,7 @@ h2.section-title { font-size: 1.75rem; line-height: 1.2; margin-bottom: 1.4rem; 
   scroll-margin-top: 72px;
 }
 .pub-year.tl-jumped { color: var(--accent); }
+.pub-year-count { opacity: 0.6; font-weight: 400; }
 .pub-item { padding: 0.9rem 0; border-top: 1px solid var(--line); }
 .pub-item:first-of-type { border-top: none; }
 .pub-item .pub-title { font-family: var(--sans); font-weight: 600; font-size: 1.05rem; line-height: 1.35; letter-spacing: -0.01em; }
