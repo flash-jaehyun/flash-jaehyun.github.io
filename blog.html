@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light dark" />
-  <title>News — Jaehyun Kim</title>
-  <meta name="description" content="News and updates from Jaehyun Kim — papers, talks, and awards in electrocatalysis and computational materials design." />
-  <link rel="canonical" href="https://flash-jaehyun.github.io/news.html" />
+  <title>Blog — Jaehyun Kim</title>
+  <meta name="description" content="Research briefs and notes by Jaehyun Kim on electrocatalysis, interfaces, and computational materials design." />
+  <link rel="canonical" href="https://flash-jaehyun.github.io/blog.html" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,13 +38,14 @@
 
   <main class="container" id="main">
     <div class="page-head">
-      <div class="sec-label">News</div>
-      <h1>News</h1>
-      <p>Research updates, papers, and talks.</p>
+      <div class="sec-label">Blog</div>
+      <h1>Writing</h1>
+      <p>Occasional research briefs and notes — syntheses of the literature, mechanistic
+      arguments, and design rules from electrocatalysis and interfacial science.</p>
     </div>
 
     <section class="block">
-      <ul class="news-list" id="news-all"></ul>
+      <div id="blog-all"></div>
     </section>
   </main>
 
@@ -57,7 +58,7 @@
   <script src="js/data.js?v=17"></script>
   <script src="js/main.js?v=17"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", () => renderNews("news-all"));
+    document.addEventListener("DOMContentLoaded", () => renderBlog("blog-all"));
   </script>
 </body>
 </html>

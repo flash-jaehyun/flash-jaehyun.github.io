@@ -24,7 +24,7 @@
       document.documentElement.dataset.theme = s || (d ? "dark" : "light");
     })();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=15" />
+  <link rel="stylesheet" href="css/style.css?v=17" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -52,6 +52,7 @@
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
         <a href="#news">News</a>
+        <a href="blog.html">Blog</a>
         <a href="#cv">CV</a>
         <button id="theme-toggle" title="Toggle dark mode">☾</button>
       </nav>
@@ -168,6 +169,17 @@
       <ul class="news-list" id="news-all" style="margin-top:1rem;"></ul>
     </section>
 
+    <!-- ================= Blog / Writing ================= -->
+    <section class="block" id="writing">
+      <div class="section-head">
+        <div class="sec-label">Blog</div>
+        <h2>Writing</h2>
+        <p class="lead" style="margin-top:0.2rem;">Occasional research briefs and notes.</p>
+      </div>
+      <div id="blog-recent" style="margin-top:1rem;"></div>
+      <p style="margin-top:1.2rem;"><a class="btn" href="blog.html">All posts →</a></p>
+    </section>
+
     <!-- ================= Biography ================= -->
     <section class="block">
       <div class="section-title-row">
@@ -194,8 +206,8 @@
     </div>
   </footer>
 
-  <script src="js/data.js?v=15"></script>
-  <script src="js/main.js?v=15"></script>
+  <script src="js/data.js?v=17"></script>
+  <script src="js/main.js?v=17"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       renderAffilTimeline("affiliations-strip");
@@ -205,6 +217,7 @@
       const viewAll = document.getElementById("pub-viewall");
       if (viewAll) viewAll.textContent = "View all " + PUBLICATIONS.length + " publications →";
       renderNews("news-all");
+      renderBlog("blog-recent", 2);
       renderBio("bio-text", "copy-bio");
       renderCVList("cv-education", CV.education);
       renderCVList("cv-experience", CV.experience);

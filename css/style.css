@@ -480,8 +480,8 @@ h2.section-title { font-size: 1.75rem; line-height: 1.2; margin-bottom: 1.4rem; 
 .pub-item .pub-links { margin-top: 0.45rem; display: flex; gap: 0.9rem; flex-wrap: wrap; }
 .pub-item .pub-links a { font-family: var(--mono); font-size: 0.72rem; color: var(--text-soft); border-bottom: 1px solid var(--line-strong); }
 .pub-item .pub-links a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
-.pub-item .pub-tags { margin-top: 0.5rem; display: flex; gap: 0.4rem; flex-wrap: wrap; }
-.pub-item .pub-tag {
+.pub-tags { margin-top: 0.5rem; display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.pub-tag {
   font-family: var(--mono);
   font-size: 0.66rem;
   letter-spacing: 0.02em;
@@ -491,6 +491,18 @@ h2.section-title { font-size: 1.75rem; line-height: 1.2; margin-bottom: 1.4rem; 
   border-radius: 999px;
   padding: 0.13rem 0.55rem;
 }
+
+/* ---------- Blog ---------- */
+.blog-card { display: block; padding: 1.4rem 0; border-top: 1px solid var(--line); text-decoration: none; color: inherit; }
+.blog-card:first-of-type { border-top: none; padding-top: 0.4rem; }
+.blog-card:hover { text-decoration: none; }
+.blog-card:hover .blog-title { color: var(--accent); }
+.blog-card:hover .blog-more { text-decoration: underline; text-underline-offset: 2px; }
+.blog-meta { display: flex; gap: 0.9rem; flex-wrap: wrap; font-family: var(--mono); font-size: 0.72rem; color: var(--text-faint); letter-spacing: 0.03em; }
+.blog-title { font-family: var(--serif); font-weight: 500; font-size: 1.4rem; line-height: 1.22; letter-spacing: 0; margin-top: 0.5rem; color: var(--text); transition: color 0.15s ease; }
+.blog-dek { font-size: 0.95rem; color: var(--text-soft); margin-top: 0.5rem; line-height: 1.6; }
+.blog-card .pub-tags { margin-top: 0.7rem; }
+.blog-more { display: inline-block; margin-top: 0.8rem; font-family: var(--mono); font-size: 0.75rem; color: var(--accent); }
 
 /* ---------- News ---------- */
 .news-list { list-style: none; }

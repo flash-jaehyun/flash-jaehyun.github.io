@@ -386,6 +386,30 @@ function renderNews(containerId, limit) {
   });
 }
 
+// Blog / writing — each post is a card linking to its own page.
+function renderBlog(containerId, limit) {
+  const root = document.getElementById(containerId);
+  if (!root || typeof BLOG === "undefined") return;
+  (limit ? BLOG.slice(0, limit) : BLOG).forEach((post) => {
+    const card = el("a", "blog-card");
+    card.href = post.href;
+    const meta = el("div", "blog-meta");
+    meta.appendChild(el("span", null, post.date));
+    if (post.readMin) meta.appendChild(el("span", null, post.readMin + " min read"));
+    if (post.sources) meta.appendChild(el("span", null, post.sources + " sources"));
+    card.appendChild(meta);
+    card.appendChild(el("h3", "blog-title", post.title));
+    if (post.dek) card.appendChild(el("p", "blog-dek", post.dek));
+    if (post.tags && post.tags.length) {
+      const tw = el("div", "pub-tags");
+      post.tags.forEach((t) => tw.appendChild(el("span", "pub-tag", t)));
+      card.appendChild(tw);
+    }
+    card.appendChild(el("span", "blog-more", "Read →"));
+    root.appendChild(card);
+  });
+}
+
 function renderDirections(containerId) {
   const root = document.getElementById(containerId);
   if (!root) return;

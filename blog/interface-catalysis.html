@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The nanoparticle is only half the catalyst — Jaehyun Kim</title>
+<meta name="description" content="A research brief on how the electrolyte packed against a catalyst particle — its cations, anions, pH and water — sets activity and selectivity across CO2 reduction, oxygen electrocatalysis and organic oxidations.">
+<link rel="canonical" href="https://flash-jaehyun.github.io/blog/interface-catalysis.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The nanoparticle is only half the catalyst">
+<meta property="og:description" content="How the electrode–electrolyte interface sets activity and selectivity — a synthesis of 14 primary sources (2022–2026) and the design rules that fall out of it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="ds/sms-control.css">
+<style>
+html, body { margin: 0; background: var(--bg); }
+  .report a { color: var(--accent-pressed); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; transition: color 180ms ease; }
+  .report a:hover { color: var(--claude-ink); }
+  [data-theme="operations-dark"] .report a:hover { color: var(--claude-on-dark); }
+  .report ::selection { background: var(--accent); color: #fff; }
+/* self-contained post: back-link bar in the operations palette */
+.post-topbar {
+  max-width: 1120px; margin: 0 auto; padding: 20px 40px 0;
+  display: flex; gap: 18px; align-items: center;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em;
+}
+.post-topbar a { color: var(--fg3); text-decoration: none; }
+.post-topbar a:hover { color: var(--accent-pressed); }
+.post-topbar .sep { color: var(--border); }
+</style>
+</head>
+<body>
+<nav class="post-topbar">
+  <a href="../blog.html">&larr; Blog</a>
+  <span class="sep">/</span>
+  <a href="../index.html">Jaehyun Kim</a>
+</nav>
+<div class="report sms-type" data-theme="operations-light" style="">
+  <div style="max-width: 1120px; margin: 0 auto; padding: 56px 40px 96px; box-sizing: border-box;">
+
+    <!-- MASTHEAD -->
+    <header>
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid var(--fg1); padding-bottom: 12px; gap: 24px; flex-wrap: wrap;">
+        <span class="overline" style="font-family: var(--font-mono); letter-spacing: 0.14em;">ELECTROCATALYSIS · INTERFACIAL SCIENCE</span>
+        <span style="font-family: var(--font-mono); font-size: 12px; color: var(--fg3); letter-spacing: 0.08em; text-transform: uppercase;">Research Brief · Rev 2026.07.19</span>
+      </div>
+
+      <h1 class="display" style="font-family: var(--font-display); font-size: 58px; line-height: 1.04; font-weight: 600; color: var(--fg1); margin: 28px 0 0; letter-spacing: -0.01em; max-width: 20ch; text-wrap: balance;">The nanoparticle is only half the catalyst.</h1>
+
+      <p style="font-family: var(--font-display); font-size: 22px; line-height: 1.5; color: var(--fg2); margin: 20px 0 0; max-width: 62ch; text-wrap: pretty;">Across CO<sub>2</sub> reduction, oxygen electrocatalysis and organic oxidations, the last three years of work converge on one claim: activity and selectivity are set as much by the electrolyte packed against the particle — its cations, anions, pH and water — as by the metal itself. This brief synthesizes the current mechanistic picture and the design rules that fall out of it.</p>
+
+      <div style="display: flex; gap: 20px; align-items: center; margin-top: 24px; font-family: var(--font-mono); font-size: 12px; color: var(--fg3); letter-spacing: 0.04em; flex-wrap: wrap;">
+        <span style="color: var(--accent-pressed);">FOR EXPERT ELECTROCHEMISTS</span>
+        <span style="color: var(--border);">|</span>
+        <span>14 PRIMARY SOURCES, 2022&ndash;2026</span>
+        <span style="color: var(--border);">|</span>
+        <span>~12 MIN READ</span>
+      </div>
+    </header>
+
+    <!-- KEY TAKEAWAYS -->
+    <section style="margin-top: 48px;">
+      <div class="overline" style="margin-bottom: 16px;">KEY TAKEAWAYS · 핵심 요약</div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+
+        <div style="background: var(--surface-raised); border: 1px solid var(--border); border-radius: 8px; box-shadow: var(--shadow-panel); padding: 20px;">
+          <div style="font-family: var(--font-mono); font-size: 40px; font-weight: 500; color: var(--fg1); line-height: 1; font-variant-numeric: tabular-nums;">2</div>
+          <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-pressed); margin-top: 8px;">CONDITIONS FOR A CATION EFFECT</div>
+          <p style="font-size: 14px; line-height: 1.5; color: var(--fg2); margin: 10px 0 0;">A 2025 electrostatic model reduces every reported cation effect to two tests: the potential sits negative of the surface's PZTC, <em>and</em> the rate-limiting step is field-sensitive. Nothing else is needed.</p>
+        </div>
+
+        <div style="background: var(--surface-raised); border: 1px solid var(--border); border-radius: 8px; box-shadow: var(--shadow-panel); padding: 20px;">
+          <div style="font-family: var(--font-mono); font-size: 40px; font-weight: 500; color: var(--fg1); line-height: 1; font-variant-numeric: tabular-nums;">8.3&times;</div>
+          <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-pressed); margin-top: 8px;">C&#8322;H&#8324;/CO SWING FROM ELECTROLYTE ALONE</div>
+          <p style="font-size: 14px; line-height: 1.5; color: var(--fg2); margin: 10px 0 0;">On one unchanged Cu electrode, concentrating the electrolyte lifts the ethylene-to-CO ratio from 2.2 to 18.3 &mdash; selectivity engineered without touching the catalyst.</p>
+        </div>
+
+        <div style="background: var(--surface-raised); border: 1px solid var(--border); border-radius: 8px; box-shadow: var(--shadow-panel); padding: 20px;">
+          <div style="font-family: var(--font-mono); font-size: 40px; font-weight: 500; color: var(--fg1); line-height: 1; font-variant-numeric: tabular-nums;">6</div>
+          <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-pressed); margin-top: 8px;">DISTINCT WAYS THE DOUBLE LAYER ACTS</div>
+          <p style="font-size: 14px; line-height: 1.5; color: var(--fg2); margin: 10px 0 0;">Competitive adsorption, potential-drop redistribution, dipole&ndash;field coupling, ion&ndash;intermediate chemistry, interfacial pH buffering and water restructuring &mdash; interrelated, often acting at once.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION I -->
+    <section style="margin-top: 64px; display: grid; grid-template-columns: 180px 1fr; gap: 40px;">
+      <div>
+        <div class="overline" style="font-family: var(--font-mono);">I</div>
+        <h2 class="display" style="font-family: var(--font-display); font-size: 30px; line-height: 1.15; font-weight: 600; color: var(--fg1); margin: 8px 0 0;">The interface <em>is</em> the reactor</h2>
+      </div>
+      <div>
+        <p style="font-size: 16px; line-height: 1.65; color: var(--fg2); margin: 0;">The electrical double layer (EDL) has been known for a century to shift observed rates, but a full account has stayed out of reach because so many components interact at once. A 2024 <em>Chemical Reviews</em> synthesis (<a href="https://doi.org/10.1021/acs.chemrev.3c00806" target="_blank">Schott et al., 124, 12391</a>) reframed the field around assessing and predicting EDL properties directly, rather than treating them as an empirical nuisance. The reaction does not happen &ldquo;on&rdquo; the metal so much as inside a few &aring;ngstr&ouml;ms of structured ions and water.</p>
+        <p style="font-size: 16px; line-height: 1.65; color: var(--fg2); margin: 16px 0 0;">A useful inventory comes from combined experiment&ndash;theory work on Pt (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9814610/" target="_blank">Nature Communications, 2022</a>), which enumerates six interrelated phenomena that operate within the double-layer microenvironment. Design intent means choosing which of these to pull on.</p>
+
+        <!-- EDL schematic -->
+        <figure style="margin: 28px 0 0; background: var(--surface-raised); border: 1px solid var(--border); border-radius: 8px; box-shadow: var(--shadow-panel); padding: 20px; overflow: hidden;">
+          <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg3); margin-bottom: 14px;">FIG. 1 · ANATOMY OF THE ELECTRODE&ndash;ELECTROLYTE INTERFACE</div>
+          <div style="display: flex; align-items: stretch; gap: 0; min-height: 128px; border: 1px solid var(--border); border-radius: 6px; overflow: hidden;">
+            <div style="width: 52px; background: var(--fg1); color: var(--claude-on-dark); display: flex; align-items: center; justify-content: center; text-align: center; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; writing-mode: vertical-rl; transform: rotate(180deg);">NANOPARTICLE</div>
+            <div style="flex: 1; padding: 14px 16px; background: var(--claude-cream-strong); border-right: 1px solid var(--border);">
+              <div style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-pressed); letter-spacing: 0.04em;">STERN / HELMHOLTZ</div>
+              <p style="font-size: 12.5px; line-height: 1.45; color: var(--fg2); margin: 6px 0 0;">Specifically-adsorbed anions in contact; hydrated cations packed against the surface. The full potential drop &mdash; and the field &mdash; concentrates here.</p>
+            </div>
+            <div style="flex: 1.1; padding: 14px 16px; background: var(--surface-sunken); border-right: 1px solid var(--border);">
+              <div style="font-family: var(--font-mono); font-size: 11px; color: var(--claude-accent-teal); letter-spacing: 0.04em;">DIFFUSE LAYER</div>
+              <p style="font-size: 12.5px; line-height: 1.45; color: var(--fg2); margin: 6px 0 0;">Field decays over nanometres; local pH and CO<sub>2</sub> activity depart sharply from bulk. Reactant supply is set here.</p>
+            </div>
+            <div style="flex: 0.9; padding: 14px 16px; background: var(--surface-raised);">
+              <div style="font-family: var(--font-mono); font-size: 11px; color: var(--fg3); letter-spacing: 0.04em;">BULK</div>
+              <p style="font-size: 12.5px; line-height: 1.45; color: var(--fg2); margin: 6px 0 0;">Nominal electrolyte. What you titrate &ne; what the site sees.</p>
+            </div>
+          </div>
+        </figure>
+
+        <!-- six phenomena -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-top: 12px;">
+          <div style="background: var(--surface-raised); padding: 14px 16px;"><span style="font-family: var(--font-mono); color: var(--accent-pressed); font-size: 13px;">01</span><div style="font-size: 13px; color: var(--fg1); font-weight: 500; margin-top: 4px;">Competitive adsorption</div><div style="font-size: 12px; color: var(--fg3); margin-top: 2px;">Ions block or free active sites</div></div>
+          <div style="background: var(--surface-raised); padding: 14px 16px;"><span style="font-family: var(--font-mono); color: var(--accent-pressed); font-size: 13px;">02</span><div style="font-size: 13px; color: var(--fg1); font-weight: 500; margin-top: 4px;">Potential-drop redistribution</div><div style="font-size: 12px; color: var(--fg3); margin-top: 2px;">Where the field falls</div></div>
+          <div style="background: var(--surface-raised); padding: 14px 16px;"><span style="font-family: var(--font-mono); color: var(--accent-pressed); font-size: 13px;">03</span><div style="font-size: 13px; color: var(--fg1); font-weight: 500; margin-top: 4px;">Dipole&ndash;field coupling</div><div style="font-size: 12px; color: var(--fg3); margin-top: 2px;">Intermediate dipole &times; field</div></div>
+          <div style="background: var(--surface-raised); padding: 14px 16px;"><span style="font-family: var(--font-mono); color: var(--accent-pressed); font-size: 13px;">04</span><div style="font-size: 13px; color: var(--fg1); font-weight: 500; margin-top: 4px;">Ion&ndash;intermediate chemistry</div><div style="font-size: 12px; color: var(--fg3); margin-top: 2px;">Direct short-range bonds</div></div>
+          <div style="background: var(--surface-raised); padding: 14px 16px;"><span style="font-family: var(--font-mono); color: var(--accent-pressed); font-size: 13px;">05</span><div style="font-size: 13px; color: var(--fg1); font-weight: 500; margin-top: 4px;">Interfacial pH buffering</div><div style="font-size: 12px; color: var(--fg3); margin-top: 2px;">Local proton supply</div></div>
+          <div style="background: var(--surface-raised); padding: 14px 16px;"><span style="font-family: var(--font-mono); color: var(--accent-pressed); font-size: 13px;">06</span><div style="font-size: 13px; color: var(--fg1); font-weight: 500; margin-top: 4px;">Water restructuring</div><div style="font-size: 12px; color: var(--fg3); margin-top: 2px;">H-bond network reshaped</div></div>
+        </div>
+      </div>
+    </section>
+
+    <hr style="border: none; border-top: 1px solid var(--border); margin: 56px 0;">
+
+    <!-- SECTION II -->
+    <section style="display: grid; grid-template-columns: 180px 1fr; gap: 40px;">
+      <div>
+        <div class="overline" style="font-family: var(--font-mono);">II</div>
+        <h2 class="display" style="font-family: var(--font-display); font-size: 30px; line-height: 1.15; font-weight: 600; color: var(--fg1); margin: 8px 0 0;">Cations, under one electrostatic law</h2>
+      </div>
+      <div>
+        <p style="font-size: 16px; line-height: 1.65; color: var(--fg2); margin: 0;">For years cation effects looked reaction-specific and contradictory. Resasco's 2025 perspective, <a href="https://doi.org/10.1021/jacsau.5c01115" target="_blank"><em>A Universal Model of Cation Effects</em></a> (JACS Au), argues they are all one thing: cations set the strength of the interfacial electric field, and that field shifts the energy of adsorbates and transition states in proportion to their dipole moments and polarizabilities. Cations that <em>pack more densely</em> steepen the potential drop and raise the field.</p>
+        <p style="font-size: 16px; line-height: 1.65; color: var(--fg2); margin: 16px 0 0;">Two conditions follow, and they are testable: <strong style="color: var(--fg1); font-weight: 600;">(1)</strong> the operating potential must be negative of the electrode's potential of zero total charge (PZTC), so cations actually accumulate; and <strong style="color: var(--fg1); font-weight: 600;">(2)</strong> the kinetically relevant step must be field-sensitive. Multiscale modelling of CO<sub>2</sub>-to-CO on Ag reproduces rate vs. cation identity, CO<sub>2</sub> pressure and concentration with <em>no empirical fit parameters</em> &mdash; small hydrated Cs<sup>+</sup> and K<sup>+</sup> pack tight, build large fields, and polarize Stern-layer water (<a href="https://pubs.acs.org/doi/10.1021/acscatal.5c03725" target="_blank">ACS Catalysis, 2025</a>).</p>
+
+        <!-- ORR cation chart -->
+        <figure style="margin: 28px 0 0; background: var(--surface-raised); border: 1px solid var(--border); border-radius: 8px; box-shadow: var(--shadow-panel); padding: 20px;">
+          <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg3); margin-bottom: 4px;">FIG. 2 · THE PZTC TEST, MADE CONCRETE (ORR)</div>
+          <p style="font-size: 13px; line-height: 1.5; color: var(--fg2); margin: 0 0 18px; max-width: 60ch;">Bender et al. (<a href="https://pubs.acs.org/doi/abs/10.1021/acsenergylett.4c01897" target="_blank">ACS Energy Lett., 2024</a>) show the PZTC predicts <em>whether</em> the oxygen reduction reaction responds to cation size at all. Schematic of the reported trend directions:</p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div style="border: 1px solid var(--border); border-radius: 6px; padding: 14px;">
+              <div style="font-size: 13px; color: var(--fg1); font-weight: 600;">Pt, Ir, Ru, Au</div>
+              <div style="font-size: 12px; color: var(--fg3); margin: 2px 0 12px;">PZTC positive of ORR window &rarr; surface charged negative &rarr; cations accumulate</div>
+              <div style="display: flex; align-items: flex-end; gap: 10px; height: 92px;">
+                <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;"><div style="width: 100%; height: 30%; background: var(--accent); border-radius: 3px 3px 0 0;"></div><span style="font-family: var(--font-mono); font-size: 11px; color: var(--fg3);">Li&#8314;</span></div>
+                <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;"><div style="width: 100%; height: 52%; background: var(--accent); border-radius: 3px 3px 0 0;"></div><span style="font-family: var(--font-mono); font-size: 11px; color: var(--fg3);">Na&#8314;</span></div>
+                <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;"><div style="width: 100%; height: 74%; background: var(--accent); border-radius: 3px 3px 0 0;"></div><span style="font-family: var(--font-mono); font-size: 11px; color: var(--fg3);">K&#8314;</span></div>
+                <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;"><div style="width: 100%; height: 100%; background: var(--accent-pressed); border-radius: 3px 3px 0 0;"></div><span style="font-family: var(--font-mono); font-size: 11px; color: var(--fg1);">Cs&#8314;</span></div>
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-pressed); margin-top: 10px; letter-spacing: 0.04em;">RATE &uarr; WITH CATION SIZE</div>
+            </div>
+            <div style="border: 1px solid var(--border); border-radius: 6px; padding: 14px;">
+              <div style="font-size: 13px; color: var(--fg1); font-weight: 600;">Ag</div>
+              <div style="font-size: 12px; color: var(--fg3); margin: 2px 0 12px;">PZTC negative of ORR window &rarr; cations repelled &rarr; no accumulation</div>
+              <div style="display: flex; align-items: flex-end; gap: 10px; height: 92px;">
+                <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;"><div style="width: 100%; height: 54%; background: var(--claude-muted-soft); border-radius: 3px 3px 0 0;"></div><span style="font-family: var(--font-mono); font-size: 11px; color: var(--fg3);">Li&#8314;</span></div>
+                <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;"><div style="width: 100%; height: 52%; background: var(--claude-muted-soft); border-radius: 3px 3px 0 0;"></div><span style="font-family: var(--font-mono); font-size: 11px; color: var(--fg3);">Na&#8314;</span></div>
+                <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;"><div style="width: 100%; height: 55%; background: var(--claude-muted-soft); border-radius: 3px 3px 0 0;"></div><span style="font-family: var(--font-mono); font-size: 11px; color: var(--fg3);">K&#8314;</span></div>
+                <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;"><div style="width: 100%; height: 53%; background: var(--claude-muted-soft); border-radius: 3px 3px 0 0;"></div><span style="font-family: var(--font-mono); font-size: 11px; color: var(--fg3);">Cs&#8314;</span></div>
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 11px; color: var(--fg3); margin-top: 10px; letter-spacing: 0.04em;">RATE ~ FLAT · NO EFFECT</div>
+            </div>
+          </div>
+          <div style="font-size: 11px; color: var(--fg3); margin-top: 14px; font-style: italic;">Schematic of reported trend directions, not measured magnitudes. Follow-up work (ACS Energy Lett. 2026) extends the surface-charge criterion beyond ORR.</div>
+        </figure>
+
+        <p style="font-size: 16px; line-height: 1.65; color: var(--fg2); margin: 20px 0 0;">The same logic governs the messy cases. In acidic CO<sub>2</sub> reduction on cobalt phthalocyanine, the proper cations act as an <em>electrostatic shield</em> that blocks bulk H<sup>+</sup> from reaching the surface while reshaping interfacial water to suppress hydrogen evolution (<a href="https://pubs.acs.org/doi/10.1021/acs.jpclett.4c01409" target="_blank">J. Phys. Chem. Lett., 2024</a>).</p>
+      </div>
+    </section>
+
+    <hr style="border: none; border-top: 1px solid var(--border); margin: 56px 0;">
+
+    <!-- SECTION III -->
+    <section style="display: grid; grid-template-columns: 180px 1fr; gap: 40px;">
+      <div>
+        <div class="overline" style="font-family: var(--font-mono);">III</div>
+        <h2 class="display" style="font-family: var(--font-display); font-size: 30px; line-height: 1.15; font-weight: 600; color: var(--fg1); margin: 8px 0 0;">Anions, pH &amp; the concentration lever</h2>
+      </div>
+      <div>
+        <p style="font-size: 16px; line-height: 1.65; color: var(--fg2); margin: 0;">Anions and cations are not independent. Multiscale modelling shows larger cations such as Cs<sup>+</sup> <em>shield anions</em> from the cathode, relieving their inhibition of CO<sub>2</sub> adsorption (<a href="https://pubs.acs.org/doi/10.1021/acscatal.5c04787" target="_blank">ACS Catalysis, 2025</a>). The two ion effects have to be read together, which is why single-variable electrolyte studies so often disagree.</p>
+        <p style="font-size: 16px; line-height: 1.65; color: var(--fg2); margin: 16px 0 0;">Concentration is the most under-used knob. On a single unchanged Cu gas-diffusion electrode, moving from 1 M to 7.1 M HCOOK lifts the ethylene-to-CO Faradaic-efficiency ratio from 2.2 to 18.3 at &minus;1.08 V; ATR-SEIRAS attributes it to a dominant *CO-bridge binding mode, and the authors conclude ion identity and concentration outrank bulk CO<sub>2</sub> solubility and bulk pH (<a href="https://chemrxiv.org/doi/pdf/10.26434/chemrxiv-2024-03mmk" target="_blank">ChemRxiv, 2024</a>).</p>
+
+        <!-- concentration chart -->
+        <figure style="margin: 28px 0 0; background: var(--surface-raised); border: 1px solid var(--border); border-radius: 8px; box-shadow: var(--shadow-panel); padding: 20px;">
+          <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg3); margin-bottom: 16px;">FIG. 3 · SELECTIVITY FROM ELECTROLYTE, NOT CATALYST</div>
+          <div style="display: flex; align-items: flex-end; gap: 32px; height: 150px; padding-left: 4px;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 0 0 96px;">
+              <span style="font-family: var(--font-mono); font-size: 20px; font-weight: 500; color: var(--fg1);">2.2</span>
+              <div style="width: 72px; height: 18px; background: var(--claude-muted-soft); border-radius: 4px 4px 0 0;"></div>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--fg3);">1 M HCOOK</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 0 0 96px;">
+              <span style="font-family: var(--font-mono); font-size: 20px; font-weight: 500; color: var(--accent-pressed);">18.3</span>
+              <div style="width: 72px; height: 118px; background: var(--accent-pressed); border-radius: 4px 4px 0 0;"></div>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--fg3);">7.1 M HCOOK</span>
+            </div>
+            <div style="flex: 1; align-self: center; border-left: 1px solid var(--border); padding-left: 24px;">
+              <div style="font-size: 13px; color: var(--fg2); line-height: 1.5;">FE(C<sub>2</sub>H<sub>4</sub>) / FE(CO) at &minus;1.08 V vs. RHE. Same copper, same potential &mdash; an <strong style="color: var(--fg1);">8.3&times;</strong> selectivity swing driven entirely by the electrolyte.</div>
+            </div>
+          </div>
+        </figure>
+
+        <p style="font-size: 16px; line-height: 1.65; color: var(--fg2); margin: 20px 0 0;">On the anodic side, anion identity is equally live: on Pt across the ORR/OER window, ClO<sub>4</sub><sup>&minus;</sup> binds weakest, then NO<sub>3</sub><sup>&minus;</sup>, then SO<sub>4</sub><sup>2&minus;</sup>, pointing to nitrate-like microenvironments as lower-poisoning alternatives to sulfonate ionomers (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9814610/" target="_blank">Nature Communications, 2022</a>). And in near-neutral OER, NiOOH shows an <em>intrinsic</em> cation effect independent of Fe impurities, mediated by stabilization of the NiOO<sup>&minus;</sup> intermediate (<a href="https://academic.oup.com/nsr/article/11/12/nwae315/7762206" target="_blank">Natl. Sci. Rev., 2024</a>).</p>
+      </div>
+    </section>
+
+    <hr style="border: none; border-top: 1px solid var(--border); margin: 56px 0;">
+
+    <!-- SECTION IV -->
+    <section style="display: grid; grid-template-columns: 180px 1fr; gap: 40px;">
+      <div>
+        <div class="overline" style="font-family: var(--font-mono);">IV</div>
+        <h2 class="display" style="font-family: var(--font-display); font-size: 30px; line-height: 1.15; font-weight: 600; color: var(--fg1); margin: 8px 0 0;">Water is not the solvent &mdash; it is a reagent</h2>
+      </div>
+      <div>
+        <p style="font-size: 16px; line-height: 1.65; color: var(--fg2); margin: 0;">Interfacial water governs reaction kinetics, proton and electron transfer, and mass transport at the junction (<a href="https://onlinelibrary.wiley.com/doi/10.1002/anie.202507327" target="_blank">Angew. Chem., 2025</a>). A 2025 EES Catalysis review classifies its roles into four active parts: <em>co-catalyst, masking agent, regulator of reaction intermediates,</em> and <em>inducer of catalyst reconfiguration</em> (<a href="https://pubs.rsc.org/en/content/articlelanding/2025/ey/d5ey00161g" target="_blank">EES Catal., 3, 943</a>). It is no longer background.</p>
+        <p style="font-size: 16px; line-height: 1.65; color: var(--fg2); margin: 16px 0 0;">The mechanism is the hydrogen-bond network. Its connectivity in the double layer &mdash; not any intrinsic metal property &mdash; dominates the kinetic pH effect in hydrogen electrocatalysis on Pt (<a href="https://doi.org/10.1038/s41929-022-00846-8" target="_blank">Nat. Catal., 2022</a>); a more connected network moves protons faster. Because water structure is what cations, fields and facets ultimately reorganize, it is the common variable underneath the others.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-top: 24px;">
+          <div style="background: var(--surface-raised); padding: 16px;"><div style="font-family: var(--font-mono); font-size: 11px; color: var(--claude-accent-teal); letter-spacing: 0.04em;">ROLE 01</div><div style="font-size: 14px; color: var(--fg1); font-weight: 500; margin-top: 6px;">Co-catalyst</div><div style="font-size: 12px; color: var(--fg3); margin-top: 4px; line-height: 1.4;">Donates protons into the elementary step</div></div>
+          <div style="background: var(--surface-raised); padding: 16px;"><div style="font-family: var(--font-mono); font-size: 11px; color: var(--claude-accent-teal); letter-spacing: 0.04em;">ROLE 02</div><div style="font-size: 14px; color: var(--fg1); font-weight: 500; margin-top: 6px;">Masking agent</div><div style="font-size: 12px; color: var(--fg3); margin-top: 4px; line-height: 1.4;">Blocks or gates access to the site</div></div>
+          <div style="background: var(--surface-raised); padding: 16px;"><div style="font-family: var(--font-mono); font-size: 11px; color: var(--claude-accent-teal); letter-spacing: 0.04em;">ROLE 03</div><div style="font-size: 14px; color: var(--fg1); font-weight: 500; margin-top: 6px;">Intermediate regulator</div><div style="font-size: 12px; color: var(--fg3); margin-top: 4px; line-height: 1.4;">Stabilizes or destabilizes adsorbates</div></div>
+          <div style="background: var(--surface-raised); padding: 16px;"><div style="font-family: var(--font-mono); font-size: 11px; color: var(--claude-accent-teal); letter-spacing: 0.04em;">ROLE 04</div><div style="font-size: 14px; color: var(--fg1); font-weight: 500; margin-top: 6px;">Reconfiguration inducer</div><div style="font-size: 12px; color: var(--fg3); margin-top: 4px; line-height: 1.4;">Drives surface restructuring under bias</div></div>
+        </div>
+      </div>
+    </section>
+
+    <hr style="border: none; border-top: 1px solid var(--border); margin: 56px 0;">
+
+    <!-- SECTION V -->
+    <section style="display: grid; grid-template-columns: 180px 1fr; gap: 40px;">
+      <div>
+        <div class="overline" style="font-family: var(--font-mono);">V</div>
+        <h2 class="display" style="font-family: var(--font-display); font-size: 30px; line-height: 1.15; font-weight: 600; color: var(--fg1); margin: 8px 0 0;">The particle still writes the product</h2>
+      </div>
+      <div>
+        <p style="font-size: 16px; line-height: 1.65; color: var(--fg2); margin: 0;">None of this retires the catalyst. On copper, facet is destiny: the (100) surface drives C&ndash;C coupling toward C<sub>2</sub> products while (111) steers toward CH<sub>4</sub>, and this structure&ndash;selectivity link survives down to the nanoscale, further tunable by size (<a href="https://pubs.acs.org/doi/10.1021/acscatal.0c00297" target="_blank">ACS Catalysis, 2020</a>). Shape-controlled nanocrystals turn that into a dial.</p>
+
+        <!-- Cu facet chart -->
+        <figure style="margin: 24px 0 0; background: var(--surface-raised); border: 1px solid var(--border); border-radius: 8px; box-shadow: var(--shadow-panel); padding: 20px;">
+          <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg3); margin-bottom: 18px;">FIG. 4 · SHAPE THE COPPER, SET THE PRODUCT &middot; PEAK FE AT HIGH CURRENT DENSITY</div>
+          <div style="display: flex; flex-direction: column; gap: 18px;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;"><span style="font-size: 13px; color: var(--fg1);">Cu cubes &middot; {100} facet &rarr; <strong style="font-weight: 600;">ethylene</strong></span><span style="font-family: var(--font-mono); font-size: 14px; color: var(--accent-pressed); font-weight: 500;">57%</span></div>
+              <div style="height: 20px; background: var(--surface-sunken); border-radius: 4px; overflow: hidden;"><div style="width: 57%; height: 100%; background: var(--accent-pressed);"></div></div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;"><span style="font-size: 13px; color: var(--fg1);">Cu octahedra &middot; {111} facet &rarr; <strong style="font-weight: 600;">methane</strong></span><span style="font-family: var(--font-mono); font-size: 14px; color: var(--claude-accent-teal); font-weight: 500;">51%</span></div>
+              <div style="height: 20px; background: var(--surface-sunken); border-radius: 4px; overflow: hidden;"><div style="width: 51%; height: 100%; background: var(--claude-accent-teal);"></div></div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;"><span style="font-size: 13px; color: var(--fg1);">Concave Cu<sub>2</sub>O &middot; high-index facets &rarr; <strong style="font-weight: 600;">C<sub>2+</sub></strong></span><span style="font-family: var(--font-mono); font-size: 14px; color: var(--claude-warning); font-weight: 500;">48%</span></div>
+              <div style="height: 20px; background: var(--surface-sunken); border-radius: 4px; overflow: hidden;"><div style="width: 48%; height: 100%; background: var(--claude-warning);"></div></div>
+            </div>
+          </div>
+          <div style="font-size: 11px; color: var(--fg3); margin-top: 16px; font-style: italic; line-height: 1.5;">Cubes/octahedra at 100&ndash;300 mA cm<sup>&minus;2</sup>, as low as &minus;0.65 V vs. RHE (ACS Catal. 2020). Concave Cu<sub>2</sub>O: 48.3% C<sub>2+</sub> FE at &minus;1.1 V after in-situ reconstruction to metallic Cu (<a href="https://pubs.acs.org/doi/abs/10.1021/acssuschemeng.0c04873" target="_blank">ACS Sustain. Chem. Eng.</a>).</div>
+        </figure>
+
+        <p style="font-size: 16px; line-height: 1.65; color: var(--fg2); margin: 20px 0 0;">Size cuts two ways. DFT on sub-2 nm clusters finds Cu<sub>38</sub> and Cu<sub>79</sub> optimal for C<sub>2</sub> formation with minimal overpotential (<a href="https://pubs.rsc.org/en/content/articlelanding/2025/nr/d4nr03567d" target="_blank">Nanoscale, 2025</a>), and step-edge-anchored 2&ndash;5 nm Cu particles lower overpotential and improve selectivity (<a href="https://www.nature.com/articles/s42004-024-01218-y" target="_blank">Commun. Chem., 2024</a>). The catch, imported from decades of ORR work: idealized single-crystal performance rarely reproduces inside a real membrane-electrode assembly &mdash; the interface that surrounds the particle at 200 mA cm<sup>&minus;2</sup> is not the interface of an H-cell.</p>
+      </div>
+    </section>
+
+    <hr style="border: none; border-top: 1px solid var(--border); margin: 56px 0;">
+
+    <!-- SECTION VI -->
+    <section style="display: grid; grid-template-columns: 180px 1fr; gap: 40px;">
+      <div>
+        <div class="overline" style="font-family: var(--font-mono);">VI</div>
+        <h2 class="display" style="font-family: var(--font-display); font-size: 30px; line-height: 1.15; font-weight: 600; color: var(--fg1); margin: 8px 0 0;">The rule generalizes beyond CO<sub>2</sub></h2>
+      </div>
+      <div>
+        <p style="font-size: 16px; line-height: 1.65; color: var(--fg2); margin: 0 0 20px;">Interface engineering is not a CO<sub>2</sub>RR curiosity. The same levers &mdash; potential, local field, heterointerface, waveform &mdash; steer selectivity in oxygen electrocatalysis and in organic oxidations where over-oxidation and C&ndash;C cleavage compete.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+
+          <div style="background: var(--surface-raised); border: 1px solid var(--border); border-radius: 8px; box-shadow: var(--shadow-panel); padding: 18px;">
+            <div style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-pressed); letter-spacing: 0.06em;">ORR / OER</div>
+            <div style="font-size: 15px; color: var(--fg1); font-weight: 500; margin: 6px 0 8px;">Surface charge as a screening filter</div>
+            <p style="font-size: 13.5px; color: var(--fg2); line-height: 1.55; margin: 0;">The PZTC criterion lets you predict, before any test, which oxygen-catalyst surfaces will even respond to electrolyte tuning &mdash; and it now screens thousands of transition-metal-oxide compositions computationally.</p>
+          </div>
+
+          <div style="background: var(--surface-raised); border: 1px solid var(--border); border-radius: 8px; box-shadow: var(--shadow-panel); padding: 18px;">
+            <div style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-pressed); letter-spacing: 0.06em;">GLYCEROL OXIDATION</div>
+            <div style="font-size: 15px; color: var(--fg1); font-weight: 500; margin: 6px 0 8px;">Waveform &amp; heterointerface pick the C</div>
+            <p style="font-size: 13.5px; color: var(--fg2); line-height: 1.55; margin: 0;">Pulsed potential steers glycerol to glyceric acid (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10948758/" target="_blank">Nat. Commun., 2024</a>); a NiOOH/CeO<sub>2</sub> nanoheterointerface reaches 95.7% FE to formate via selective C&ndash;C cleavage (<a href="https://pubs.acs.org/doi/10.1021/acs.nanolett.6c00752" target="_blank">Nano Lett.</a>).</p>
+          </div>
+
+          <div style="background: var(--surface-raised); border: 1px solid var(--border); border-radius: 8px; box-shadow: var(--shadow-panel); padding: 18px;">
+            <div style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-pressed); letter-spacing: 0.06em;">AMMONIA OXIDATION</div>
+            <div style="font-size: 15px; color: var(--fg1); font-weight: 500; margin: 6px 0 8px;">Site pairing routes N to N<sub>2</sub></div>
+            <p style="font-size: 13.5px; color: var(--fg2); line-height: 1.55; margin: 0;">Diatomic and alloy sites tune the N-intermediate binding that decides N<sub>2</sub>-vs-NO<sub>x</sub> selectivity; interface control is central to the emerging AOR literature (<a href="https://doi.org/10.1016/j.checat.2024.100932" target="_blank">Chem Catal., 2024</a>).</p>
+          </div>
+
+          <div style="background: var(--surface-raised); border: 1px solid var(--border); border-radius: 8px; box-shadow: var(--shadow-panel); padding: 18px;">
+            <div style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-pressed); letter-spacing: 0.06em;">PAIRED ELECTROLYSIS</div>
+            <div style="font-size: 15px; color: var(--fg1); font-weight: 500; margin: 6px 0 8px;">Both interfaces earn their keep</div>
+            <p style="font-size: 13.5px; color: var(--fg2); line-height: 1.55; margin: 0;">Coupling a productive anodic oxidation (biomass, plastic, ammonia synthesis) to cathodic reduction reframes the anode interface as a value stream, not a waste-heat OER (<a href="https://www.cell.com/chem-catalysis/abstract/S2667-1093(25)00074-0" target="_blank">Chem Catal., 2025</a>).</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DESIGN RULES -->
+    <section style="margin-top: 64px; background: var(--surface-inverse); border-radius: 12px; padding: 40px; color: var(--fg-inverse);">
+      <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--claude-accent-teal);">DESIGN RULES · 설계 규칙</div>
+      <h2 class="display" style="font-family: var(--font-display); font-size: 34px; line-height: 1.15; font-weight: 600; color: var(--claude-on-dark); margin: 10px 0 28px; max-width: 24ch;">Six ways to tune the interface, not just the metal</h2>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--claude-surface-dark-elevated); border: 1px solid var(--claude-surface-dark-elevated); border-radius: 8px; overflow: hidden;">
+        <div style="background: var(--claude-surface-dark-soft); padding: 22px;"><div style="font-family: var(--font-mono); color: var(--claude-accent-teal); font-size: 13px;">RULE 01</div><div style="font-size: 16px; color: var(--claude-on-dark); font-weight: 500; margin: 8px 0 6px;">Choose the cation by PZTC</div><p style="font-size: 13px; color: var(--claude-on-dark-soft); line-height: 1.55; margin: 0;">If the operating potential is negative of the surface's PZTC and the key step is field-sensitive, larger cations win. If not, don't bother.</p></div>
+        <div style="background: var(--claude-surface-dark-soft); padding: 22px;"><div style="font-family: var(--font-mono); color: var(--claude-accent-teal); font-size: 13px;">RULE 02</div><div style="font-size: 16px; color: var(--claude-on-dark); font-weight: 500; margin: 8px 0 6px;">Concentrate before you redesign</div><p style="font-size: 13px; color: var(--claude-on-dark-soft); line-height: 1.55; margin: 0;">High salt concentration can deliver an order-of-magnitude selectivity shift on an unchanged electrode. Try it first.</p></div>
+        <div style="background: var(--claude-surface-dark-soft); padding: 22px;"><div style="font-family: var(--font-mono); color: var(--claude-accent-teal); font-size: 13px;">RULE 03</div><div style="font-size: 16px; color: var(--claude-on-dark); font-weight: 500; margin: 8px 0 6px;">Match facet to bond</div><p style="font-size: 13px; color: var(--claude-on-dark-soft); line-height: 1.55; margin: 0;">Want C&ndash;C coupling? Expose {100}. Want a C<sub>1</sub> product? Expose {111}. Shape control is selectivity control.</p></div>
+        <div style="background: var(--claude-surface-dark-soft); padding: 22px;"><div style="font-family: var(--font-mono); color: var(--claude-accent-teal); font-size: 13px;">RULE 04</div><div style="font-size: 16px; color: var(--claude-on-dark); font-weight: 500; margin: 8px 0 6px;">Raise EDL capacitance</div><p style="font-size: 13px; color: var(--claude-on-dark-soft); line-height: 1.55; margin: 0;">High-dielectric surroundings (e.g. mica on Ag) enrich local reactant and pushed CO FE to 98% &mdash; a physical, not chemical, edit.</p></div>
+        <div style="background: var(--claude-surface-dark-soft); padding: 22px;"><div style="font-family: var(--font-mono); color: var(--claude-accent-teal); font-size: 13px;">RULE 05</div><div style="font-size: 16px; color: var(--claude-on-dark); font-weight: 500; margin: 8px 0 6px;">Shield protons in acid</div><p style="font-size: 13px; color: var(--claude-on-dark-soft); line-height: 1.55; margin: 0;">Cations can form an electrostatic barrier to bulk H<sup>+</sup>, buying CO<sub>2</sub>RR selectivity in acidic media where HER would otherwise win.</p></div>
+        <div style="background: var(--claude-surface-dark-soft); padding: 22px;"><div style="font-family: var(--font-mono); color: var(--claude-accent-teal); font-size: 13px;">RULE 06</div><div style="font-size: 16px; color: var(--claude-on-dark); font-weight: 500; margin: 8px 0 6px;">Engineer the water network</div><p style="font-size: 13px; color: var(--claude-on-dark-soft); line-height: 1.55; margin: 0;">Connectivity of interfacial H-bonds sets proton-transfer rate. It is the variable the other five ultimately move.</p></div>
+      </div>
+    </section>
+
+    <!-- UNCERTAINTY -->
+    <section style="margin-top: 56px; border: 1px solid var(--border); border-radius: 8px; padding: 28px 32px; background: var(--surface-raised); box-shadow: var(--shadow-panel);">
+      <div class="overline" style="color: var(--claude-warning);">WHAT THE EVIDENCE DOES NOT YET SETTLE</div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 16px;">
+        <div><div style="font-size: 14px; color: var(--fg1); font-weight: 500;">Coupled ion effects</div><p style="font-size: 13px; color: var(--fg2); line-height: 1.55; margin: 6px 0 0;">Cation&ndash;anion interactions are still hard to deconvolute in real multi-component electrolytes; individual contributions resist isolation.</p></div>
+        <div><div style="font-size: 14px; color: var(--fg1); font-weight: 500;">Acid stability</div><p style="font-size: 13px; color: var(--fg2); line-height: 1.55; margin: 6px 0 0;">Acidic CO<sub>2</sub>RR relieves carbonate loss but catalyst dissolution and dynamic microenvironment drift remain unresolved.</p></div>
+        <div><div style="font-size: 14px; color: var(--fg1); font-weight: 500;">Lab-to-device gap</div><p style="font-size: 13px; color: var(--fg2); line-height: 1.55; margin: 6px 0 0;">Single-crystal and H-cell results routinely fail to transfer to MEA reactors; interfacial conditions differ fundamentally at scale.</p></div>
+      </div>
+    </section>
+
+    <!-- SOURCES -->
+    <section style="margin-top: 64px;">
+      <div style="border-top: 2px solid var(--fg1); padding-top: 12px; display: flex; justify-content: space-between; align-items: baseline;">
+        <span class="overline" style="font-family: var(--font-mono);">SOURCES · 출처</span>
+        <span style="font-family: var(--font-mono); font-size: 11px; color: var(--fg3);">PRIMARY LITERATURE, 2022&ndash;2026</span>
+      </div>
+      <ol style="list-style: none; counter-reset: src; padding: 0; margin: 20px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px;">
+        <li style="counter-increment: src; border-bottom: 1px solid var(--border); padding: 12px 0; display: flex; gap: 14px;"><span style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-pressed); min-width: 24px;">01</span><span style="font-size: 13px; line-height: 1.5; color: var(--fg2);">Resasco. <em>A Universal Model of Cation Effects in Electrocatalysis.</em> JACS Au, 2025. <a href="https://doi.org/10.1021/jacsau.5c01115" target="_blank">10.1021/jacsau.5c01115</a></span></li>
+        <li style="counter-increment: src; border-bottom: 1px solid var(--border); padding: 12px 0; display: flex; gap: 14px;"><span style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-pressed); min-width: 24px;">02</span><span style="font-size: 13px; line-height: 1.5; color: var(--fg2);">Bender et al. <em>The PZTC Predicts Cation Effects for the ORR.</em> ACS Energy Lett., 2024, 9, 4724. <a href="https://pubs.acs.org/doi/abs/10.1021/acsenergylett.4c01897" target="_blank">10.1021/acsenergylett.4c01897</a></span></li>
+        <li style="counter-increment: src; border-bottom: 1px solid var(--border); padding: 12px 0; display: flex; gap: 14px;"><span style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-pressed); min-width: 24px;">03</span><span style="font-size: 13px; line-height: 1.5; color: var(--fg2);">Schott et al. <em>How to Assess and Predict EDL Properties.</em> Chem. Rev., 2024, 124, 12391. <a href="https://doi.org/10.1021/acs.chemrev.3c00806" target="_blank">10.1021/acs.chemrev.3c00806</a></span></li>
+        <li style="counter-increment: src; border-bottom: 1px solid var(--border); padding: 12px 0; display: flex; gap: 14px;"><span style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-pressed); min-width: 24px;">04</span><span style="font-size: 13px; line-height: 1.5; color: var(--fg2);"><em>Revealing the Role of the EDL in Electrochemical CO<sub>2</sub> Reduction.</em> ACS Catalysis, 2025. <a href="https://pubs.acs.org/doi/10.1021/acscatal.5c03725" target="_blank">10.1021/acscatal.5c03725</a></span></li>
+        <li style="counter-increment: src; border-bottom: 1px solid var(--border); padding: 12px 0; display: flex; gap: 14px;"><span style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-pressed); min-width: 24px;">05</span><span style="font-size: 13px; line-height: 1.5; color: var(--fg2);"><em>How Cation Size Modulates the Anion Effect in CO<sub>2</sub> Electroreduction.</em> ACS Catalysis, 2025. <a href="https://pubs.acs.org/doi/10.1021/acscatal.5c04787" target="_blank">10.1021/acscatal.5c04787</a></span></li>
+        <li style="counter-increment: src; border-bottom: 1px solid var(--border); padding: 12px 0; display: flex; gap: 14px;"><span style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-pressed); min-width: 24px;">06</span><span style="font-size: 13px; line-height: 1.5; color: var(--fg2);"><em>Cooperative Effects at High Electrolyte Concentration (Cu, C<sub>2</sub>H<sub>4</sub>/CO).</em> ChemRxiv, 2024. <a href="https://chemrxiv.org/doi/pdf/10.26434/chemrxiv-2024-03mmk" target="_blank">chemrxiv-2024-03mmk</a></span></li>
+        <li style="counter-increment: src; border-bottom: 1px solid var(--border); padding: 12px 0; display: flex; gap: 14px;"><span style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-pressed); min-width: 24px;">07</span><span style="font-size: 13px; line-height: 1.5; color: var(--fg2);"><em>Boosting CO<sub>2</sub> Electrocatalysis through EDL Regulation (mica/Ag, 98% CO).</em> iScience, 2024. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10875555/" target="_blank">PMC10875555</a></span></li>
+        <li style="counter-increment: src; border-bottom: 1px solid var(--border); padding: 12px 0; display: flex; gap: 14px;"><span style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-pressed); min-width: 24px;">08</span><span style="font-size: 13px; line-height: 1.5; color: var(--fg2);"><em>Robust Acidic CO<sub>2</sub>R via &ldquo;Molecularly Charged&rdquo; CoPc.</em> J. Phys. Chem. Lett., 2024, 15, 7342. <a href="https://pubs.acs.org/doi/10.1021/acs.jpclett.4c01409" target="_blank">10.1021/acs.jpclett.4c01409</a></span></li>
+        <li style="counter-increment: src; border-bottom: 1px solid var(--border); padding: 12px 0; display: flex; gap: 14px;"><span style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-pressed); min-width: 24px;">09</span><span style="font-size: 13px; line-height: 1.5; color: var(--fg2);"><em>Acid Anion Electrolyte Effects on Pt (six DL phenomena).</em> Nature Communications, 2022. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9814610/" target="_blank">PMC9814610</a></span></li>
+        <li style="counter-increment: src; border-bottom: 1px solid var(--border); padding: 12px 0; display: flex; gap: 14px;"><span style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-pressed); min-width: 24px;">10</span><span style="font-size: 13px; line-height: 1.5; color: var(--fg2);">Tang et al. <em>Key Roles of Interfacial Water in Electrocatalysis.</em> EES Catal., 2025, 3, 943. <a href="https://pubs.rsc.org/en/content/articlelanding/2025/ey/d5ey00161g" target="_blank">10.1039/d5ey00161g</a></span></li>
+        <li style="counter-increment: src; border-bottom: 1px solid var(--border); padding: 12px 0; display: flex; gap: 14px;"><span style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-pressed); min-width: 24px;">11</span><span style="font-size: 13px; line-height: 1.5; color: var(--fg2);">Li et al. <em>H-Bond Network Connectivity Dominates the Kinetic pH Effect.</em> Nat. Catal., 2022, 5, 900. <a href="https://doi.org/10.1038/s41929-022-00846-8" target="_blank">10.1038/s41929-022-00846-8</a></span></li>
+        <li style="counter-increment: src; border-bottom: 1px solid var(--border); padding: 12px 0; display: flex; gap: 14px;"><span style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-pressed); min-width: 24px;">12</span><span style="font-size: 13px; line-height: 1.5; color: var(--fg2);"><em>Facet-Dependent Selectivity of Cu at Viable Current Densities.</em> ACS Catalysis, 2020, 10. <a href="https://pubs.acs.org/doi/10.1021/acscatal.0c00297" target="_blank">10.1021/acscatal.0c00297</a></span></li>
+        <li style="counter-increment: src; border-bottom: 1px solid var(--border); padding: 12px 0; display: flex; gap: 14px;"><span style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-pressed); min-width: 24px;">13</span><span style="font-size: 13px; line-height: 1.5; color: var(--fg2);"><em>Pulse-Potential-Mediated Selectivity: Glycerol&rarr;Glyceric Acid.</em> Nat. Commun., 2024. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10948758/" target="_blank">PMC10948758</a></span></li>
+        <li style="counter-increment: src; padding: 12px 0; display: flex; gap: 14px;"><span style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-pressed); min-width: 24px;">14</span><span style="font-size: 13px; line-height: 1.5; color: var(--fg2);"><em>Recent Advances in Microenvironment Regulation for Electrocatalysis.</em> Natl. Sci. Rev., 2024, 11, nwae315. <a href="https://academic.oup.com/nsr/article/11/12/nwae315/7762206" target="_blank">10.1093/nsr/nwae315</a></span></li>
+      </ol>
+      <p style="font-family: var(--font-mono); font-size: 11px; color: var(--fg3); line-height: 1.6; margin: 28px 0 0;">Compiled from live literature search, 19 Jul 2026. Faradaic-efficiency and ratio figures are reported values from the cited primary sources under their stated conditions; Fig. 2 shows trend directions, not measured magnitudes. Claims are attributed inline; where evidence is contested it is flagged in the uncertainty panel above.</p>
+    </section>
+
+  </div>
+</div>
+</body>
+</html>

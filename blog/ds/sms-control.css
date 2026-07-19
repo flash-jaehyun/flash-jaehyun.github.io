@@ -1,0 +1,214 @@
+/* ============================================================================
+   SMS Control — Colors & Type
+   Foundation tokens distilled from SMS.Control.Client/src/styles/tokens.css
+   and component-tokens.css (generated from the repo's DESIGN-claude.md source).
+
+   The product is an industrial parcel-sortation operations console themed on a
+   warm "Claude" palette (clay primary on cream canvas). Two themes ship:
+   operations-light (default) and operations-dark.
+
+   FONT SUBSTITUTION (see README → Visual Foundations): the product ships the
+   proprietary Klim fonts Styrene B (UI) and Copernicus (display). Those cannot
+   be redistributed, so this design system substitutes the nearest Google Fonts:
+     Styrene B   → Hanken Grotesk
+     Copernicus  → Source Serif 4
+     JetBrains Mono ships on Google Fonts and is used as-is.
+   Korean glyphs fall back to Noto Sans KR. Swap in the real .woff2 files under
+   /fonts and update --font-* if you have a license.
+   ============================================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap");
+
+:root {
+  /* ---- Primitive palette · "claude" warm neutrals + clay -------------- */
+  --claude-canvas: #faf9f5;        /* app background, cream */
+  --claude-surface-soft: #f5f0e8;  /* sunken surface */
+  --claude-surface-card: #efe9de;  /* cream card */
+  --claude-cream-strong: #e8e0d2;  /* strongest cream fill */
+  --claude-hairline: #e6dfd8;      /* default 1px border */
+  --claude-hairline-soft: #ebe6df; /* faintest divider */
+
+  --claude-ink: #141413;           /* darkest text */
+  --claude-body-strong: #252523;   /* strong body */
+  --claude-body: #3d3d3a;          /* body text */
+  --claude-muted: #6c6a64;         /* muted text */
+  --claude-muted-soft: #8e8b82;    /* faint / disabled text */
+
+  --claude-primary: #cc785c;       /* clay — brand accent */
+  --claude-primary-active: #a9583e;/* pressed / button bg */
+  --claude-primary-disabled: #e6dfd8;
+  --claude-on-primary: #ffffff;
+
+  --claude-accent-teal: #5db8a6;   /* info / dark-theme focus */
+  --claude-accent-amber: #e8a55a;  /* attention accent */
+
+  --claude-success: #5db872;
+  --claude-warning: #d4a017;
+  --claude-error:   #c64545;
+
+  /* dark-theme surfaces */
+  --claude-surface-dark: #181715;
+  --claude-surface-dark-soft: #1f1e1b;
+  --claude-surface-dark-elevated: #252320;
+  --claude-on-dark: #faf9f5;
+  --claude-on-dark-soft: #a09d96;
+
+  /* ---- Type families -------------------------------------------------- */
+  --font-ui: "Hanken Grotesk", "Noto Sans KR", system-ui, -apple-system, sans-serif;
+  --font-display: "Source Serif 4", "Noto Sans KR", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* ---- Type scale (px) ------------------------------------------------ */
+  --fs-xs: 12px;
+  --fs-sm: 13px;
+  --fs-md: 14px;   /* base body */
+  --fs-lg: 16px;
+  --fs-xl: 18px;
+  --fs-xxl: 22px;
+  --fs-display-sm: 28px;
+  --fs-display-md: 36px;
+  --fs-display-lg: 48px;
+  --fs-display-xl: 64px;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 500; /* the system maps "semibold" to 500 — intentional */
+  --fw-bold: 700;
+
+  --lh-tight: 1.2;
+  --lh-normal: 1.4;
+  --lh-relaxed: 1.55;
+  --ls-normal: 0;
+  --ls-uppercase: 1.5px; /* applied to overlines / labels */
+
+  /* ---- Spacing scale (4px base) -------------------------------------- */
+  --space-half: 2px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-section: 96px;
+
+  /* ---- Radii ---------------------------------------------------------- */
+  --radius-xs: 4px;
+  --radius-sm: 6px;   /* form fields */
+  --radius-md: 8px;   /* panels, buttons, cards */
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 9999px;
+
+  /* ---- Elevation ------------------------------------------------------ */
+  --shadow-none: 0 0 #00000000;
+  --shadow-panel: 0 10px 28px #14141320;   /* resting panels/cards */
+  --shadow-overlay: 0 18px 50px #14141333;  /* dialogs / popovers */
+
+  /* ---- Motion --------------------------------------------------------- */
+  --motion-instant: 0ms;
+  --motion-fast: 120ms;
+  --motion-normal: 180ms;  /* default transition */
+  --motion-slow: 260ms;
+  --ease: ease;
+
+  /* ---- Control sizing ------------------------------------------------- */
+  --control-height: 40px;   /* buttons, inputs (standard density) */
+  --row-height: 40px;       /* table rows */
+  --icon-button: 32px;
+  --nav-item-height: 48px;
+  --rail-width: 232px;
+  --rail-collapsed: 72px;
+  --icon-stroke: 1.8;       /* Lucide stroke width */
+
+  /* ====================================================================
+     SEMANTIC ALIASES — operations-light (default theme)
+     Use these in product work, not the raw primitives above.
+     ==================================================================== */
+  --bg: var(--claude-canvas);
+  --surface-sunken: var(--claude-surface-soft);
+  --surface-panel: var(--claude-canvas);
+  --surface-raised: #ffffff;        /* white cards on cream */
+  --surface-inverse: var(--claude-surface-dark);
+
+  --fg1: var(--claude-ink);         /* primary text */
+  --fg2: var(--claude-body);        /* secondary text */
+  --fg3: var(--claude-muted);       /* muted text / labels */
+  --fg-inverse: var(--claude-on-dark);
+
+  --border: var(--claude-hairline);
+  --border-strong: var(--claude-muted-soft);
+  --border-focus: var(--claude-primary-active); /* clay focus ring (light) */
+
+  --accent: var(--claude-primary);
+  --accent-pressed: var(--claude-primary-active);
+  --on-accent: var(--claude-on-primary);
+
+  --icon: var(--claude-muted);
+  --icon-active: var(--border-focus);
+
+  /* status intents (light) — pills & badges */
+  --intent-success-fg: var(--claude-body-strong);
+  --intent-success-border: var(--claude-success);
+  --intent-warning-border: var(--claude-warning);
+  --intent-danger-border: var(--claude-error);
+  --intent-info-border: var(--claude-accent-teal);
+  --intent-stale-border: var(--claude-warning);
+  --intent-bg: var(--surface-raised);
+
+  /* ====================================================================
+     SEMANTIC TYPE — ready-to-apply roles
+     ==================================================================== */
+  --h1-size: var(--fs-xxl);
+  --h1-weight: var(--fw-semibold);
+  --h2-size: 20px;              /* workspace header title */
+  --h3-size: var(--fs-lg);
+  --p-size: var(--fs-md);
+  --label-size: var(--fs-xs);  /* uppercase overline */
+  --code-size: var(--fs-xs);
+  --data-size: var(--fs-md);   /* mono metric values */
+}
+
+/* -------- Dark theme overrides ---------------------------------------- */
+[data-theme="operations-dark"] {
+  --bg: var(--claude-surface-dark);
+  --surface-sunken: var(--claude-surface-dark);
+  --surface-panel: var(--claude-surface-dark-soft);
+  --surface-raised: var(--claude-surface-dark-elevated);
+  --surface-inverse: var(--claude-canvas);
+
+  --fg1: var(--claude-on-dark);
+  --fg2: var(--claude-on-dark-soft);
+  --fg3: var(--claude-on-dark-soft);
+  --fg-inverse: var(--claude-ink);
+
+  --border: var(--claude-surface-dark-elevated);
+  --border-strong: var(--claude-on-dark-soft);
+  --border-focus: var(--claude-accent-teal);  /* teal focus in dark */
+
+  --accent: var(--claude-primary-active);
+  --accent-pressed: var(--claude-primary-active);
+
+  --icon: var(--claude-on-dark-soft);
+
+  --intent-success-fg: var(--claude-on-dark);
+  --intent-bg: var(--surface-raised);
+}
+
+/* -------- Semantic element defaults (opt-in via .sms-type scope) ------- */
+.sms-type, .sms-type * { font-family: var(--font-ui); }
+.sms-type h1 { font-size: var(--h1-size); font-weight: var(--fw-semibold); line-height: var(--lh-tight); margin: 0; }
+.sms-type h2 { font-size: var(--h2-size); font-weight: var(--fw-semibold); line-height: var(--lh-tight); margin: 0; }
+.sms-type h3 { font-size: var(--h3-size); font-weight: var(--fw-semibold); line-height: var(--lh-tight); margin: 0; }
+.sms-type p  { font-size: var(--p-size); line-height: var(--lh-relaxed); color: var(--fg2); margin: 0; }
+.sms-type code, .sms-type .data { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.sms-type .overline {
+  font-size: var(--label-size);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--border-focus);
+}
+.sms-type .display { font-family: var(--font-display); }
