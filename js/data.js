@@ -438,20 +438,6 @@ const NEWS = [
   { date: "2021", type: "award", html: "Received Best Oral Presentation Awards at IUMRS-ICA 2021 and KIEEME 2021." },
 ];
 
-// ---- Blog / writing ----------------------------------------------
-// Each post links to its own page under blog/. Keep newest first.
-const BLOG = [
-  {
-    title: "The nanoparticle is only half the catalyst",
-    dek: "Across CO₂ reduction, oxygen electrocatalysis and organic oxidations, activity and selectivity are set as much by the electrolyte packed against the particle — its cations, anions, pH and water — as by the metal itself. A synthesis of the current mechanistic picture and the design rules that fall out of it.",
-    date: "2026-07-19",
-    readMin: 12,
-    sources: 14,
-    tags: ["electrocatalysis", "interface", "CO₂R", "double layer", "review"],
-    href: "blog/interface-catalysis.html",
-  },
-];
-
 // ---- CV ----------------------------------------------------------
 const CV = {
   education: [
